@@ -21,3 +21,5 @@ Diagrama de clases (GitHub)
 Codigo del proyecto (Github)
 MER (GitHub)
 MR (GitHub)
+
+Enlace Trello : https://trello.com/invite/b/67a5fdba23077d7eb9092b51/ATTI11bc185a410123f4e961ff19b7b7448bE6422D45/fase-2
