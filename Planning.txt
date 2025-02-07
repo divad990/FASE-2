@@ -1,0 +1,23 @@
+- ED :
+
+• Crear la estructura necesaria en Git para trabajar en el desarrollo del proyecto. (GITHUB)
+• Crear el diagrama de clases. (visual paradigm)
+
+- BD :
+
+• Diagrama MER. Debe ser coherente y respetar el enunciado. Todo aquello que no pueda ser representado en el modelo debe estar comentado. Por ejemplo: la restricción de que un equipo tenga como máximo 6 miembros no pueden ser modelada, por lo que estará anotada y más adelante se tratara de forma adecuada.
+• Modelo relacional. Este modelo debe de ser coherente con el modelo entidad/relación
+y reflejar todas las restricciones.
+
+- PG :
+
+• Codificación del diagrama de clases.
+• Codificación del alta, baja y modificación de equipos y jugadores de la competición. Los datos serán almacenados como objetos en colecciones de datos. 
+• Generación de jornadas y de enfrentamientos en java.
+
+ENTREGA: 
+
+Diagrama de clases (GitHub)
+Codigo del proyecto (Github)
+MER (GitHub)
+MR (GitHub)
