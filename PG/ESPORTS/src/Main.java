@@ -58,14 +58,14 @@ public class Main {
                             break;
                         case 2:
                             fallo2 = false;
-                            //JugadorController.modificarJugador();
+                            JugadorController.modificarJugador();
                             break;
                         case 3:
-                            //JugadorController.eliminarJugador();
+                            JugadorController.eliminarJugador();
                             fallo2 = false;
                             break;
                         case 4:
-                            //JugadorController.listarJugadores();
+                            JugadorController.listarJugadores();
                             fallo2 = false;
                             break;
                         case 5:
