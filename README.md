@@ -2,7 +2,7 @@
 
 ## 📂 Estructura del Proyecto
 
-### 🔹 ED (Estructura y Diseño)
+### 🔹 ED (Entornos de Desarrollo)
 - Crear la estructura necesaria en **GitHub** para trabajar en el desarrollo del proyecto.
 - Crear el **Diagrama de Clases** en *Visual Paradigm*.
 
