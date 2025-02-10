@@ -93,21 +93,21 @@ public class Main {
                             4. Listar equipos\
 
                             5. Salir"""));
-                    switch (opcion2) {
+                    switch (opcion2) { //TODO solucionar multiples opcoines s/n cuando hay equipos iguales
                         case 1:
-                            //EquipoController.crearEquipo();
+                            EquipoController.crearEquipo();
                             fallo2 = false;
                             break;
                         case 2:
-                            //EquipoController.modificarEquipo();
+                            EquipoController.modificarEquipo();
                             fallo2 = false;
                             break;
                         case 3:
-                            //EquipoController.eliminarEquipo();
+                            EquipoController.eliminarEquipo();
                             fallo2 = false;
                             break;
                         case 4:
-                            //EquipoController.listarEquipos();
+                            EquipoController.listarEquipos();
                             fallo2 = false;
                             break;
                         case 5:
