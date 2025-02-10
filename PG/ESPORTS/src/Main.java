@@ -11,7 +11,8 @@ public class Main {
         //HECHO 1. Almacenar jugadores
         //HECHO 2. Almacenar equipos
         //TODO 2.1 Gestionar relacion de equipo jugador
-        //TODO 3. Generar jornadas y enfremtanmeintos, almacenar
+        //TODO 3. Gestinar restricciones
+        //TODO 4. Generar jornadas y enfremtanmeintos, almacenar
 
         //TODO Fase 2 (campeonato)
 
