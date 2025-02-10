@@ -2,7 +2,7 @@ package Controladores;
 
 import Modelo.Jugador;
 import Modelo.JugadorDAO;
-import utils.Utilidades;
+import Utils.Utilidades;
 
 import javax.swing.*;
 import java.time.LocalDate;
