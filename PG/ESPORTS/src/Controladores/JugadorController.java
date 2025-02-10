@@ -77,7 +77,7 @@ public class JugadorController {
         String nombre = Utilidades.solicitarDato("Nombre", "Teclea el nombre del jugador", "^[A-Z][a-z]+([ -][A-Z][a-z]+)*$");
         String apellidos = Utilidades.solicitarDato("Apellido", "Teclea el apellido del juagdor", "^[A-Z][a-z]+([ -][A-Z][a-z]+)*$");
         String nacionalidad = Utilidades.solicitarDato("Nacionalidad", "Teclea la nacionalidad del jugador", "^[A-Z][a-z]+([ -][A-Z][a-z]+)*$");
-        LocalDate fechaNacimiento = convertirLocalDate((Utilidades.solicitarDato("Fecha de Nacimiento", "Teclea la fecha de nacimiento del jugador (yyyy-MM-dd)","^[0-9]{2}/[0-9]{2}/[0-9]{4}$")));
+        LocalDate fechaNacimiento = convertirLocalDate((Utilidades.solicitarDato("Fecha de Nacimiento", "Teclea la fecha de nacimiento del jugador (dd/mm/yyyy)","^[0-9]{2}/[0-9]{2}/[0-9]{4}$")));
         String nickname = Utilidades.solicitarDato("Nickname", "Teclea el nickname del jugador", "^[A-Za-z0-9_]+$");
         String rol = Utilidades.solicitarDato("Rol", "Teclea el rol del jugador", "^[A-Za-z]+$");
         int sueldo = Integer.parseInt(Utilidades.solicitarDato("Sueldo", "Teclea el sueldo del jugador", "^[0-9]+$"));
