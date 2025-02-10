@@ -84,8 +84,7 @@ public class JugadorController {
 
         return new Jugador(nombre, apellidos, nacionalidad, fechaNacimiento, nickname, rol, sueldo, null);
     }
-    public static LocalDate convertirLocalDate(String fecha)
-    {
+    public static LocalDate convertirLocalDate(String fecha){
         DateTimeFormatter formato;
         formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         return LocalDate.parse(fecha, formato);
