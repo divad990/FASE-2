@@ -8,8 +8,9 @@ public class Main {
 
         menuf1();
 
-        //TODO 1. Almacenar jugadores
-        //TODO 2. Almacenar equipos
+        //HECHO 1. Almacenar jugadores
+        //HECHO 2. Almacenar equipos
+        //TODO 2.1 Gestionar relacion de equipo jugador
         //TODO 3. Generar jornadas y enfremtanmeintos, almacenar
 
         //TODO Fase 2 (campeonato)
