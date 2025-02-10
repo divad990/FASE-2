@@ -25,29 +25,129 @@ public class Main {
     }
 
     public static void menuf1() {
-        JOptionPane.showMessageDialog(null, "Bienvenido al programa de inscripciones de la competición de eSports");
+        boolean fallo = true;
+        while (fallo) {
+            //Menu con botones
+            int opcion1 = JOptionPane.showOptionDialog(null, "Selecciona una opción", "Menú principal", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, new Object[]{"Gestionar jugadores", "Gestionar equipos", "Generar calendario", "Salir"}, 0);
+            if (opcion1 != -1) {
+                opcion1++;
+                System.out.println(" seleccionada opcion " + opcion1);
+            }
+            if (opcion1 == 1) {
+                fallo = false;
+                boolean fallo2 = true;
+                do {
+                    int opcion2 = Integer.parseInt(JOptionPane.showInputDialog("""
+                            Selecciona una opción: \
 
-        int opcion = Integer.parseInt(JOptionPane.showInputDialog("Selecciona una opción:\n1. Inscribir jugadores\n2. Inscribir equipos\n3. Generar jornadas y enfrentamientos\n4. Salir"));
+                            1. Crear jugador\
 
-        switch(opcion){
-            case 1:
-                //TODO Inscribir jugadores
-                break;
-            case 2:
-                //TODO Inscribir equipos
-                break;
-            case 3:
-                //TODO Generar jornadas y enfrentamientos
-                break;
-            case 4:
-                System.exit(0);
-                break;
-            default:
-                JOptionPane.showMessageDialog(null, "Opción no válida");
+                            2. Modificar jugador\
+
+                            3. Eliminar jugador\
+
+                            4. Listar jugadores\
+
+                            5. Salir"""));
+                    switch (opcion2) {
+                        case 1:
+                            fallo2 = false;
+                            //JugadorController.crearJugador();
+                            break;
+                        case 2:
+                            fallo2 = false;
+                            //JugadorController.modificarJugador();
+                            break;
+                        case 3:
+                            //JugadorController.eliminarJugador();
+                            fallo2 = false;
+                            break;
+                        case 4:
+                            //JugadorController.listarJugadores();
+                            fallo2 = false;
+                            break;
+                        case 5:
+                            fallo2 = false;
+                            menuf1();
+                            break;
+                        default:
+                            System.out.println("Opción no válida");
+                    }
+                } while (fallo2);
                 menuf1();
-                break;
-        }
+            } else if (opcion1 == 2) {
+                fallo = false;
+                boolean fallo2 = true;
+                do {
+                    int opcion2 = Integer.parseInt(JOptionPane.showInputDialog("""
+                            Selecciona una opción: \
 
+                            1. Crear equipo\
+
+                            2. Modificar equipo\
+
+                            3. Eliminar equipo\
+
+                            4. Listar equipos\
+
+                            5. Salir"""));
+                    switch (opcion2) {
+                        case 1:
+                            //EquipoController.crearEquipo();
+                            fallo2 = false;
+                            break;
+                        case 2:
+                            //EquipoController.modificarEquipo();
+                            fallo2 = false;
+                            break;
+                        case 3:
+                            //EquipoController.eliminarEquipo();
+                            fallo2 = false;
+                            break;
+                        case 4:
+                            //EquipoController.listarEquipos();
+                            fallo2 = false;
+                            break;
+                        case 5:
+                            fallo2 = false;
+                            menuf1();
+                            break;
+                        default:
+                            System.out.println("Opción no válida");
+                    }
+                } while (fallo2);
+                menuf1();
+            } else if (opcion1 == 3) {
+                fallo = false;
+                boolean fallo2 = true;
+                do {
+                    int opcion2 = Integer.parseInt(JOptionPane.showInputDialog("""
+                            Selecciona una opción: \
+
+                            1. Generar calendario\
+
+                            2. Salir"""));
+                    switch (opcion2) {
+                        case 1:
+                            
+                            fallo2 = false;
+                            break;
+                        case 2:
+                            fallo2 = false;
+                            menuf1();
+                            break;
+                        default:
+                            System.out.println("Opción no válida");
+                    }
+                } while (fallo2);
+                menuf1();
+            } else if (opcion1 == 4) {
+                fallo = false;
+                System.exit(0);
+            } else {
+                System.out.println("Opción no válida");
+            }
+        }
     }
 
 }
