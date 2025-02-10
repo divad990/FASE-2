@@ -1,3 +1,5 @@
+import Controladores.*;
+
 import javax.swing.*;
 
 public class Main {
@@ -52,7 +54,7 @@ public class Main {
                     switch (opcion2) {
                         case 1:
                             fallo2 = false;
-                            //JugadorController.crearJugador();
+                            JugadorController.crearJugador();
                             break;
                         case 2:
                             fallo2 = false;
