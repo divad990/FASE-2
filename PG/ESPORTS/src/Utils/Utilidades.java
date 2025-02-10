@@ -1,4 +1,4 @@
-package utils;
+package Utils;
 
 import javax.swing.*;
 import java.util.regex.Matcher;
