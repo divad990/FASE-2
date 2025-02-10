@@ -16,15 +16,15 @@ public class Jugador {
 
   }
 
-    public Jugador(String nombre, Equipo equipo, int sueldo, String nickname, String rol, LocalDate fechaNacimiento, String nacionalidad, String apellido) {
+    public Jugador(String nombre, String apellido, String nacionalidad, LocalDate fechaNacimiento, String nickname, String rol, int sueldo, Equipo equipo) {
         this.nombre = nombre;
-        this.equipo = equipo;
-        this.sueldo = sueldo;
+        this.apellido = apellido;
+        this.nacionalidad = nacionalidad;
+        this.fechaNacimiento = fechaNacimiento;
         this.nickname = nickname;
         this.rol = rol;
-        this.fechaNacimiento = fechaNacimiento;
-        this.nacionalidad = nacionalidad;
-        this.apellido = apellido;
+        this.sueldo = sueldo;
+        this.equipo = equipo;
     }
 
     public String getNombre() {
