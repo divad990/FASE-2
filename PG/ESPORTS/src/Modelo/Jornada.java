@@ -12,10 +12,9 @@ public class Jornada {
 
     }
 
-    public Jornada(int numero, LocalDate fecha, ArrayList<Jornada> listaJornadas) {
+    public Jornada(int numero, LocalDate fecha) {
         this.numero = numero;
         this.fecha = fecha;
-        this.listaJornadas = listaJornadas;
     }
 
     public int getNumero() {
