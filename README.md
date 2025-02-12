@@ -14,7 +14,10 @@
 #### **Fase 1: Inscripción**
 - ✅ Almacenar jugadores.
 - ✅ Almacenar equipos.
-- ✅ Gestionar la relación equipo-jugador.
+- 🔄 Gestionar la relación equipo-jugador.
+1. Hacer que solo se pueda meter una vez cada jugador
+2. Mostrar mejor la lista de jugadores
+3. Mirar si se puede meter dentro del crear equipo una redirección al método exclusivo para introducir jugadores
 - 🔄 Gestionar restricciones.
 - 🔄 Generar jornadas y enfrentamientos, almacenarlos.
 

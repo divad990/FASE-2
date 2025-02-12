@@ -10,7 +10,10 @@ public class Main {
 
         //HECHO 1. Almacenar jugadores
         //HECHO 2. Almacenar equipos
-        //HECHO 2.1 Gestionar relacion de equipo jugador
+        //TODO 2.1 Gestionar relacion de equipo jugador
+        // -Hacer que solo se pueda meter una vez cada jugador
+        // -Mostrar mejor la lista de jugadores
+        // -Mirar si se puede meter dentro del crear equipo una redirección al metodo exclusivo para introducir jugadores
         //TODO 3. Gestinar restricciones
         //TODO 4. Generar jornadas y enfremtanmeintos, almacenar
 
