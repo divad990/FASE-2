@@ -21,9 +21,7 @@ public class EquipoDAO {
                 equipos.add(e);
             }
         }
-
         return comprobante;
-
     }
     public static void eliminarEquipo(String nombre){
         equipos.removeIf(equipo -> equipo.getNombre().contentEquals(nombre));
@@ -33,7 +31,7 @@ public class EquipoDAO {
         for (Equipo equipo : equipos) {
             vista.append("Nombre: ").append(equipo.getNombre())
                     .append("\t Fecha de Fundación: ").append(equipo.getFechaFundacion())
-                    .append("\t Jugadores: ").append(equipo.getListaJugadores())
+                    .append("\t Jugadores: ").append(mostrarJugadoresEquipo(equipo.getListaJugadores()))
                     .append("\n");
         }
     }
@@ -41,4 +39,11 @@ public class EquipoDAO {
         mostrarEquipos(vista2);
     }
 
+    public static StringBuilder mostrarJugadoresEquipo(ArrayList<Jugador> listaJugadores){
+        StringBuilder vistaJugadores = new StringBuilder();
+        for (Jugador jugador : listaJugadores) {
+            vistaJugadores.append("Nombre: ").append(jugador.getNombre()).append(", Apellido: ").append(jugador.getApellido()).append(", Nacionalidad: ").append(jugador.getNacionalidad()).append(" ,Fecha nacimiento: ").append(jugador.getFechaNacimiento()).append(" ,Nickname: ").append(jugador.getNickname()).append(" ,Rol: ").append(jugador.getRol()).append(" ,Sueldo: ").append(jugador.getSueldo()+"\n");
+        }
+        return vistaJugadores;
+    }
 }
