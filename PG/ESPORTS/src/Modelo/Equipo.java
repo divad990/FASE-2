@@ -14,7 +14,7 @@ public class Equipo {
 
     public Equipo(String nombre, ArrayList<Jugador> listaJugadores, LocalDate fechaFundacion) {
         this.nombre = nombre;
-        this.listaJugadores = listaJugadores;
+        this.listaJugadores = (listaJugadores != null) ? listaJugadores : new ArrayList<>();
         this.fechaFundacion = fechaFundacion;
     }
 
@@ -41,4 +41,6 @@ public class Equipo {
     public void setFechaFundacion(LocalDate fechaFundacion) {
         this.fechaFundacion = fechaFundacion;
     }
+
+
 }
