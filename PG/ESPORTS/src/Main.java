@@ -115,7 +115,7 @@ public class Main {
                             fallo2 = false;
                             break;
                         case 5:
-                            //EquipoController.introducirJugadores();
+                            EquipoController.introducirJugadores();
                             fallo2 = false;
                             break;
                         case 6:
