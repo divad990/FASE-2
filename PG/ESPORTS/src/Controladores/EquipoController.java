@@ -119,8 +119,37 @@ public class EquipoController {
             JOptionPane.showMessageDialog(null, "Error al listar los equipos");
         }
     }
-    //TODO introducir jugadores en equipo
-    // INICIO FUNCIONES COMPLEMENTARIAS
+    public static void introducirJugadores(){
+        boolean salir = true;
+        do {
+            String nickname = Utilidades.solicitarDato("Nickname", "Teclea el nickname del jugador", "^[A-Za-z0-9_]+$");
+            String equipo = Utilidades.solicitarDato("Equipo", "Teclea el nombre del equipo", "^[A-Za-z0-9_]+$");
+            //1 Comprobar si el jugador existe
+            if (jugadores.containsKey(nickname)) {
+                //2 Comprobar si el equipo existe
+                if (equipos.stream().anyMatch(equipo1 -> equipo1.getNombre().contentEquals(equipo))) {
+                    //3 Guardar el objeto jugador con nickname en j
+                    Jugador j = JugadorDAO.recibirJugador(nickname);
+                    //4 Recorrer la lista de equipos y añadir el jugador al equipo
+                    for (Equipo e : equipos) {
+                        if (e.getNombre().contentEquals(equipo)) {
+                            e.getListaJugadores().add(j);
+                            JOptionPane.showMessageDialog(null, "Jugador introducido correctamente");
+                        }
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "No existe un equipo con ese nombre");
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "No existe un jugador con ese nickname");
+            }
+            String respuestaj2 = JOptionPane.showInputDialog("¿Quieres introducir otro jugador en el equipo? (s/n)");
+            if (respuestaj2.equalsIgnoreCase("n")) {
+                salir = false;
+            }
+        } while (salir);
+    }
+    //INICIO FUNCIONES COMPLEMENTARIAS
     public static Equipo solicitarDatos(){
 
         String nombre = Utilidades.solicitarDato("Nombre", "Teclea el nombre del equipo", "^[A-Z][a-z]+([ -][A-Z][a-z]+)*$");

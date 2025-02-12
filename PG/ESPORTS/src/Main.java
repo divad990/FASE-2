@@ -10,7 +10,7 @@ public class Main {
 
         //HECHO 1. Almacenar jugadores
         //HECHO 2. Almacenar equipos
-        //TODO 2.1 Gestionar relacion de equipo jugador
+        //HECHO 2.1 Gestionar relacion de equipo jugador
         //TODO 3. Gestinar restricciones
         //TODO 4. Generar jornadas y enfremtanmeintos, almacenar
 
@@ -115,7 +115,7 @@ public class Main {
                             fallo2 = false;
                             break;
                         case 5:
-                            //EquipoController.introducirJugadores();
+                            EquipoController.introducirJugadores();
                             fallo2 = false;
                             break;
                         case 6:
