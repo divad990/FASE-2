@@ -2,6 +2,8 @@ package Controladores;
 
 import Modelo.Equipo;
 import Modelo.EquipoDAO;
+import Modelo.Jugador;
+import Modelo.JugadorDAO;
 import Utils.Utilidades;
 
 import javax.swing.*;
@@ -9,18 +11,39 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 import static Modelo.EquipoDAO.equipos;
+import static Modelo.JugadorDAO.jugadores;
 
 public class EquipoController {
     //INICIO VARIABLES
     private static final StringBuilder vista = new StringBuilder();
     private static final StringBuilder vista2 = new StringBuilder();
     //INICIO FUNCIONES PRINCIPALES
-    public static void crearEquipo() {
+    public static void crearEquipo() { //TODO incluir opción de meter jugadores
         try {
             boolean terminar = true;
             do {
                 Equipo e = solicitarDatos();
 
+                // Inicio introducción jugadores
+                String respuestaj = JOptionPane.showInputDialog("¿Quieres introducir jugadores en el equipo? (s/n)");
+                if (respuestaj.equalsIgnoreCase("s")) {
+                    boolean salir = true;
+                    do {
+                        String nickname = Utilidades.solicitarDato("Nickname", "Teclea el nickname del jugador", "^[A-Za-z0-9_]+$");
+                        if (jugadores.containsKey(nickname)) {
+                            Jugador j = JugadorDAO.recibirJugador(nickname);
+                            e.getListaJugadores().add(j);
+                            JOptionPane.showMessageDialog(null, "Jugador introducido correctamente");
+                        } else {
+                            JOptionPane.showMessageDialog(null, "No existe un jugador con ese nickname");
+                        }
+                        String respuestaj2 = JOptionPane.showInputDialog("¿Quieres introducir otro jugador en el equipo? (s/n)");
+                        if (respuestaj2.equalsIgnoreCase("n")) {
+                            salir = false;
+                        }
+                    } while (salir);
+                // Fin introducción jugadores
+                }
                 boolean comprobante = EquipoDAO.crearEquipo(e);
                 if (comprobante) {
                     JOptionPane.showMessageDialog(null, "Ya existe un equipo con ese nombre");
@@ -28,8 +51,8 @@ public class EquipoController {
                 }
                 System.out.println("Equipo con nombre " + e.getNombre() + " creado correctamente");
                 // Fin creación -- preguntar si se quiere crear otro equipo
-                String respuesta = JOptionPane.showInputDialog("¿Quieres crear otro equipo? (s/n)");
-                if (respuesta.equalsIgnoreCase("n")) {
+                String respuestac = JOptionPane.showInputDialog("¿Quieres crear otro equipo? (s/n)");
+                if (respuestac.equalsIgnoreCase("n")) {
                     terminar = false;
                 }
             } while (terminar);
@@ -96,6 +119,7 @@ public class EquipoController {
             JOptionPane.showMessageDialog(null, "Error al listar los equipos");
         }
     }
+    //TODO introducir jugadores en equipo
     // INICIO FUNCIONES COMPLEMENTARIAS
     public static Equipo solicitarDatos(){
 

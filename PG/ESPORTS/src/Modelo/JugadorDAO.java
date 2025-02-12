@@ -29,5 +29,8 @@ public class JugadorDAO {
     public static void mostrarJugadorActual(StringBuilder vista2){
         mostrarJugadores(vista2);
     }
+    public static Jugador recibirJugador(String nickname){
+        return jugadores.get(nickname);
 
+    }
 }
