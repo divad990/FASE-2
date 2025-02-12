@@ -128,13 +128,22 @@ public class EquipoController {
             if (jugadores.containsKey(nickname)) {
                 //2 Comprobar si el equipo existe
                 if (equipos.stream().anyMatch(equipo1 -> equipo1.getNombre().contentEquals(equipo))) {
-                    //3 Guardar el objeto jugador con nickname en j
-                    Jugador j = JugadorDAO.recibirJugador(nickname);
-                    //4 Recorrer la lista de equipos y añadir el jugador al equipo
+                    //3 Comprobar si ya tiene 6 jugadores
                     for (Equipo e : equipos) {
                         if (e.getNombre().contentEquals(equipo)) {
-                            e.getListaJugadores().add(j);
-                            JOptionPane.showMessageDialog(null, "Jugador introducido correctamente");
+                            if (e.getListaJugadores().size() == 6) {
+                                JOptionPane.showMessageDialog(null, "El equipo ya tiene 6 jugadores");
+                            } else {
+                                //4 Guardar el objeto jugador con nickname en j
+                                Jugador j = JugadorDAO.recibirJugador(nickname);
+                                //5 Recorrer la lista de equipos y añadir el jugador al equipo
+                                for (Equipo l : equipos) {
+                                    if (l.getNombre().contentEquals(equipo)) {
+                                        l.getListaJugadores().add(j);
+                                        JOptionPane.showMessageDialog(null, "Jugador introducido correctamente");
+                                    }
+                                }
+                            }
                         }
                     }
                 } else {
@@ -145,7 +154,15 @@ public class EquipoController {
             }
             String respuestaj2 = JOptionPane.showInputDialog("¿Quieres introducir otro jugador en el equipo? (s/n)");
             if (respuestaj2.equalsIgnoreCase("n")) {
-                salir = false;
+                for (Equipo e : equipos) {
+                    if (e.getNombre().contentEquals(equipo)) {
+                        if (e.getListaJugadores().size() < 2) {
+                            JOptionPane.showMessageDialog(null, "El equipo tiene menos de 2 jugadores");
+                        } else {
+                            salir = false;
+                        }
+                    }
+                }
             }
         } while (salir);
     }
