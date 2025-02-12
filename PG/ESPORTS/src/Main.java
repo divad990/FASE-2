@@ -93,8 +93,10 @@ public class Main {
                             3. Eliminar equipo\
 
                             4. Listar equipos\
+                            
+                            5. Introducir jugadores\
 
-                            5. Salir"""));
+                            6. Salir"""));
                     switch (opcion2) { //TODO solucionar multiples opcoines s/n cuando hay equipos iguales
                         case 1:
                             EquipoController.crearEquipo();
@@ -113,6 +115,10 @@ public class Main {
                             fallo2 = false;
                             break;
                         case 5:
+                            //EquipoController.introducirJugadores();
+                            fallo2 = false;
+                            break;
+                        case 6:
                             fallo2 = false;
                             menuf1();
                             break;
