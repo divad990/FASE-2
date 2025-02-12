@@ -139,7 +139,7 @@ public class Main {
                             2. Salir"""));
                     switch (opcion2) {
                         case 1:
-
+                            JornadaController.crearJornada();
                             fallo2 = false;
                             break;
                         case 2:

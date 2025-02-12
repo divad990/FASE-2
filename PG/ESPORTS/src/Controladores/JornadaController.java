@@ -9,30 +9,15 @@ import java.time.format.DateTimeFormatter;
 
 public class JornadaController {
     //INICIO VARIABLES
-    private static final StringBuilder vista = new StringBuilder();
-    private static final StringBuilder vista2 = new StringBuilder();
 
     public static void crearJornada() {
         try {
-            boolean terminar = true;
-            do {
-                Jornada j = solicitarDatos();
-
-                boolean comprobante = JornadaDAO.crearJornada(j);
-                if (comprobante) {
-                    JOptionPane.showMessageDialog(null, "Ya existe la jornada con ese nombre");
-                    JornadaDAO.crearJornada(j);
-                }
-                System.out.println("Jornada con nombre " + j.getNumero() + j.getFecha() +" creado correctamente");
-                // Fin creación -- preguntar si se quiere crear otro equipo
-                String respuesta = JOptionPane.showInputDialog("¿Quieres crear otro equipo? (s/n)");
-                if (respuesta.equalsIgnoreCase("n")) {
-                    terminar = false;
-                }
-            } while (terminar);
+            //Comprobar restricciones
+            //1. El numero de equipos tiene que ser par.
+            //2. Los equipos estan formados por 6 juagadores.
+            //3. El salario mínimo tiene que ser mayor al SMI.
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error al crear el equipo");
-            System.out.println("Error al crear el equipo: " + e.getClass());
+
         }
     }
     public static Jornada solicitarDatos(){
