@@ -12,7 +12,7 @@ public class JornadaController {
     private static final StringBuilder vista = new StringBuilder();
     private static final StringBuilder vista2 = new StringBuilder();
 
-    public static void crearEquipo() {
+    public static void crearJornada() {
         try {
             boolean terminar = true;
             do {
@@ -43,8 +43,7 @@ public class JornadaController {
     }
 
     public static LocalDate convertirLocalDate(String fecha){
-        DateTimeFormatter formato;
-        formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         return LocalDate.parse(fecha, formato);
     }
 }
