@@ -13,8 +13,8 @@ public class JornadaDAO {
             listaJornadas.add(j);
         } else {
             for (int i = 0; i < listaJornadas.size(); i++) {
-                if (j.getNumero().contentEquals(j.getNumero())) {
-                    System.out.println("Ya existe un equipo con ese nombre");
+                if (j.getNumero()==listaJornadas.get(i).getNumero()) {
+                    System.out.println("Ya existe una jornada con ese nombre");
                     comprobante = true;
                 }
             }
@@ -22,9 +22,7 @@ public class JornadaDAO {
                 listaJornadas.add(j);
             }
         }
-
         return comprobante;
-
     }
 
 }
