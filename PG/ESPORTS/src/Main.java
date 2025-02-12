@@ -97,7 +97,7 @@ public class Main {
                             5. Introducir jugadores\
 
                             6. Salir"""));
-                    switch (opcion2) { //TODO solucionar multiples opcoines s/n cuando hay equipos iguales
+                    switch (opcion2) { //TODO solucionar multiples opciones s/n cuando hay equipos iguales
                         case 1:
                             EquipoController.crearEquipo();
                             fallo2 = false;
