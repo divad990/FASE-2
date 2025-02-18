@@ -50,7 +50,7 @@
 
 | Área | Responsable |
 |-------|-----------------------------|
-| **Código** | David González, Iker Hernaez |
+| **Código** | David González, Iker Hernaez, Gorka |
 | **Bases de Datos** | David González |
 | **Diagrama de Clases** | David González, Unax González De Langarica |
 
