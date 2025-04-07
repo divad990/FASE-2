@@ -5,6 +5,7 @@
 ### 🔹 ED (Entornos de Desarrollo)
 - Crear la estructura necesaria en **GitHub** para trabajar en el desarrollo del proyecto.
 - Crear el **Diagrama de Clases** en *Visual Paradigm*.
+- Crear el **Diagrama de casos de uso** en *Visual Paradigm*.
 
 ### 🔹 BD (Base de Datos)
 - **Diagrama MER**: Debe ser coherente y respetar el enunciado. Todo aquello que no pueda ser representado en el modelo debe estar comentado. Ejemplo: la restricción de que un equipo tenga como máximo 6 miembros no puede ser modelada, por lo que se anotará y se tratará más adelante.
