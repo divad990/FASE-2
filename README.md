@@ -95,5 +95,5 @@ procedimiento que está probando y dónde se utiliza en la aplicación Java.
 |-------|-----------------------------|
 | **Código** | David González, Iker Hernaez |
 | **Bases de Datos** | David González |
-| **Diagrama de Clases** | David González, Unax González De Langarica |
+| **Entornos de desarrollo** | David González, Unax González De Langarica |
 
