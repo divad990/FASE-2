@@ -93,7 +93,7 @@ procedimiento que está probando y dónde se utiliza en la aplicación Java.
 
 | Área | Responsable |
 |-------|-----------------------------|
-| **Código** | David González, Iker Hernaez, Gorka |
+| **Código** | David González, Iker Hernaez |
 | **Bases de Datos** | David González |
 | **Diagrama de Clases** | David González, Unax González De Langarica |
 
