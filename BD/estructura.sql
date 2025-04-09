@@ -33,25 +33,21 @@ CREATE TABLE Jornada (
     numero_jornada NUMBER(2) not null,
     fecha date not null);
 
-CREATE TABLE Enfrentamiento(
+CREATE TABLE Enfrentamiento (
     id number(5) PRIMARY KEY,
     id_jornada NUMBER(5) not null,
     hora TIMESTAMP not null,
     CONSTRAINT fk_id_jornada foreign key (id_jornada) references Jornada(id));
 
-CREATE TABLE Jugador (dni VARCHAR(9), nombre VARCHAR(50) NOT NULL, rol VARCHAR(25), nickname VARCHAR(50) NOT NULL UNIQUE, apellido VARCHAR(50) NOT NULL,
-                      nacionalidad VARCHAR(50), fecha_nacimiento DATE NOT NULL, sueldo NUMBER(6,2) NOT NULL, id_equipo NUMBER(5),
+CREATE TABLE Jugador (dni VARCHAR(9), nombre VARCHAR(50) NOT NULL, rol VARCHAR(25), nickname VARCHAR(50) NOT NULL UNIQUE,
+                      apellido VARCHAR(50) NOT NULL, nacionalidad VARCHAR(50), fecha_nacimiento DATE NOT NULL,
+                      sueldo NUMBER(6,2) NOT NULL, id_equipo NUMBER(5),
                     CONSTRAINT pk_dni PRIMARY KEY (dni),
                     CONSTRAINT fk_jugador_id_equipo FOREIGN KEY (id_equipo) REFERENCES equipo (id));
 
-CREATE TABLE Jugadores_Equipos (dni_jugador VARCHAR(9), id_equipo NUMBER(5),
-                    CONSTRAINT pk_jugadores_equipos PRIMARY KEY (dni_jugador, id_equipo),
-                    CONSTRAINT fk_dni_jugador FOREIGN KEY (dni_jugador) REFERENCES Jugador (dni),
-                    CONSTRAINT fk_id_equipo FOREIGN KEY (id_equipo) REFERENCES Equipo (id));
-
-CREATE TABLE Enfrentamientos_Equipos (id_equipo NUMBER(5), id_enfrentamiento NUMBER(5), resultado VARCHAR(5) NOT NULL,
+CREATE TABLE Partidos (id_equipo NUMBER(5), id_enfrentamiento NUMBER(5), resultado VARCHAR(5) NOT NULL,
                     CONSTRAINT pk_enfrentamientos_equipos PRIMARY KEY (id_equipo,id_enfrentamiento),
                     CONSTRAINT fk_enfrentamientos_id_equipo FOREIGN KEY (id_equipo) REFERENCES equipo(id),
                     CONSTRAINT fk_enfrentamientos_id_enfrentamiento FOREIGN KEY (id_enfrentamiento) REFERENCES Enfrentamiento(id));
 
-CREATE TABLE Usuarios (username VARCHAR(15) PRIMARY KEY, passwd VARCHAR(50) NOT NULL, admin BOOLEAN, NOT NULL)
+CREATE TABLE Competicion (id NUMBER(5) PRIMARY KEY, nombre NOT NULL UNIQUE, estado BOOLEAN NOT NULL);
