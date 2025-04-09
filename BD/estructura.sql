@@ -53,3 +53,5 @@ CREATE TABLE Enfrentamientos_Equipos (id_equipo NUMBER(5), id_enfrentamiento NUM
                     CONSTRAINT pk_enfrentamientos_equipos PRIMARY KEY (id_equipo,id_enfrentamiento),
                     CONSTRAINT fk_enfrentamientos_id_equipo FOREIGN KEY (id_equipo) REFERENCES equipo(id),
                     CONSTRAINT fk_enfrentamientos_id_enfrentamiento FOREIGN KEY (id_enfrentamiento) REFERENCES Enfrentamiento(id));
+
+CREATE TABLE Usuarios (username VARCHAR(15) PRIMARY KEY, passwd VARCHAR(50) NOT NULL, admin BOOLEAN, NOT NULL)
