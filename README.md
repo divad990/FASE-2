@@ -58,20 +58,20 @@ procedimiento que está probando y dónde se utiliza en la aplicación Java.
 -🔄 Utilizando el JUnit generar pruebas para comprobar el código creado.
 
 ## 📌 Entregables
-- 📜 **Diagrama de Clases** *(GitHub)*
-- 💻 **Código del Proyecto** *(GitHub)*
-- 📊 **MER (Modelo Entidad-Relación)** *(GitHub)*
-- 🔗 **MR (Modelo Relacional)** *(GitHub)*
+- 📜 **Diagrama de Clases**
+- 💻 **Código del Proyecto**
+- 📊 **MER (Modelo Entidad-Relación)**
+- 🔗 **MR (Modelo Relacional)**
 
-- 🧾**Pruebas documentdas** *(GitHub)*
-- 📃**Documentación del código** *(GitHub - URL)*
-- 💻**Código del proyecto** *(GitHub)*
-- ➿**Script SQL estructura** *(GitHub)*
-- ➿**Script SQL inserción** *(GitHub)*
-- ➿**Script SQL triggers** *(GitHub)*
-- ➿**Script SQL prueba triggers** *(GitHub)*
-- ♻️**Script PL/SQL procedimientos y fucniones** *(GitHub)*
-- ♻️**Script PL/SQL comprobación procedimientos anon** *(GitHub)*
+- 🧾**Pruebas documentdas**
+- 📃**Documentación del código**
+- 💻**Código del proyecto**
+- ➿**Script SQL estructura**
+- ➿**Script SQL inserción**
+- ➿**Script SQL triggers**
+- ➿**Script SQL prueba triggers**
+- ♻️**Script PL/SQL procedimientos y fucniones**
+- ♻️**Script PL/SQL comprobación procedimientos anon**
 
 
 🔗 **Enlace Trello:** [Fase 2 y 3](https://trello.com/invite/b/67a5fdba23077d7eb9092b51/ATTI11bc185a410123f4e961ff19b7b7448bE6422D45/fase-2)
