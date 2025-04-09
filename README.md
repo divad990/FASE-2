@@ -67,7 +67,7 @@ procedimiento que está probando y dónde se utiliza en la aplicación Java.
 - 📃**Documentación del código**
 - 💻**Código del proyecto**
 - ➿**Script SQL estructura**
-- ➿**Script SQL inserción**
+- ➿**Script SQL inserción datos (solo si es necesario)**
 - ➿**Script SQL triggers**
 - ➿**Script SQL prueba triggers**
 - ♻️**Script PL/SQL procedimientos y fucniones**
