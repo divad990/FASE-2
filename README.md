@@ -54,9 +54,6 @@ procedimiento que está probando y dónde se utiliza en la aplicación Java.
   6. No se podrán generar jornadas con equipos de menos de **2 jugadores**.
   7. Una vez generado el calendario de una competición, **se cerrará la Fase 1**.
 
-#### **Fase 3: Entorno gráfico**
--🔄 Desarrollo del entorno gráfico de la aplicación siguiendo la estructura MVC.
-
 #### **Fase 4: Pruebas y documentación**
 -🔄 Utilizando el JUnit generar pruebas para comprobar el código creado.
 
