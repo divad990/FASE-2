@@ -31,12 +31,12 @@ jugadores de ese equipo. Las excepciones serán visualizadas en el programa Java
 informe con la relación de los jugadores de un equipo concreto. De cada jugador se
 verá el nombre, apellido, rol y salario. El nombre del equipo le llegará como
 parámetro. Las excepciones serán visualizadas en el programa Java.
-- 🔄 Triggers
+- ✅ Triggers
 ✅1. Asegurar que el salario de los jugadores cumple el enunciado.
 ✅2. Controlar que no haya más de 6 jugadores en un equipo.
-🔄3. Antes de generar el calendario de una competición, garantizar que todos los
+✅3. Antes de generar el calendario de una competición, garantizar que todos los
       equipos tienen un mínimo de dos jugadores.
-🔄4. Controlar que una vez generado el calendario de la competición, no se pueden
+✅4. Controlar que una vez generado el calendario de la competición, no se pueden
     modificar, ni los equipos, ni los jugadores de cada equipo.
 -🔄 Bloque anónimo pruebas: Script que contenga todos los procedimientos PL/SQL anónimos
 destinados a probar la funcionalidad de los procedimientos almacenados y
