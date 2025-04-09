@@ -13,13 +13,10 @@
 
 ### 🔹 PG (Programación)
 #### **Fase 1: Inscripción**
-- ✅ Almacenar jugadores.
-- ✅ Almacenar equipos.
-- 🔄 Gestionar la relación equipo-jugador.
-1. Hacer que solo se pueda meter una vez cada jugador
-2. Mostrar mejor la lista de jugadores
-3. Mirar si se puede meter dentro del crear equipo una redirección al método exclusivo para introducir jugadores
-- 🔄 Gestionar restricciones.
+- 🔄 Login básico (Admins podrán hacer CRUD general, cerrar etapa inscripción, generar calendario, introducir resultados de enfrentamientos, ver todos los informes) (Usuarios podrán visualizar informe de relación de equipos que conforman la competición, visualizar informe correspondiente a resultados de la última jornada)
+- 🔄 CRUD Jugadores
+- 🔄 CRUD Equipos
+- 🔄 Gestionar restricciones. (BD)
 - 🔄 Generar jornadas y enfrentamientos, almacenarlos.
 
 ### **Fase 1.2: Inscripción BD**
@@ -34,12 +31,12 @@ jugadores de ese equipo. Las excepciones serán visualizadas en el programa Java
 informe con la relación de los jugadores de un equipo concreto. De cada jugador se
 verá el nombre, apellido, rol y salario. El nombre del equipo le llegará como
 parámetro. Las excepciones serán visualizadas en el programa Java.
-- 🔄 Triggers
+- ✅ Triggers
 ✅1. Asegurar que el salario de los jugadores cumple el enunciado.
 ✅2. Controlar que no haya más de 6 jugadores en un equipo.
-🔄3. Antes de generar el calendario de una competición, garantizar que todos los
+✅3. Antes de generar el calendario de una competición, garantizar que todos los
       equipos tienen un mínimo de dos jugadores.
-🔄4. Controlar que una vez generado el calendario de la competición, no se pueden
+✅4. Controlar que una vez generado el calendario de la competición, no se pueden
     modificar, ni los equipos, ni los jugadores de cada equipo.
 -🔄 Bloque anónimo pruebas: Script que contenga todos los procedimientos PL/SQL anónimos
 destinados a probar la funcionalidad de los procedimientos almacenados y
@@ -57,32 +54,24 @@ procedimiento que está probando y dónde se utiliza en la aplicación Java.
   6. No se podrán generar jornadas con equipos de menos de **2 jugadores**.
   7. Una vez generado el calendario de una competición, **se cerrará la Fase 1**.
 
-- **Codificación**:
-  - Implementar el **Diagrama de Clases** en código. *(2H)*
-  - Implementar **alta, baja y modificación** de equipos y jugadores de la competición. *(6H)*
-  - Generación de **jornadas y enfrentamientos** en Java. *(1H)*
-
-#### **Fase 3: Entorno gráfico**
--🔄 Desarrollo del entorno gráfico de la aplicación siguiendo la estructura MVC.
-
 #### **Fase 4: Pruebas y documentación**
 -🔄 Utilizando el JUnit generar pruebas para comprobar el código creado.
 
 ## 📌 Entregables
-- 📜 **Diagrama de Clases** *(GitHub)*
-- 💻 **Código del Proyecto** *(GitHub)*
-- 📊 **MER (Modelo Entidad-Relación)** *(GitHub)*
-- 🔗 **MR (Modelo Relacional)** *(GitHub)*
+- 📜 **Diagrama de Clases**
+- 💻 **Código del Proyecto**
+- 📊 **MER (Modelo Entidad-Relación)**
+- 🔗 **MR (Modelo Relacional)**
 
-- 🧾**Pruebas documentdas** *(GitHub)*
-- 📃**Documentación del código** *(GitHub - URL)*
-- 💻**Código del proyecto** *(GitHub)*
-- ➿**Script SQL estructura** *(GitHub)*
-- ➿**Script SQL inserción** *(GitHub)*
-- ➿**Script SQL triggers** *(GitHub)*
-- ➿**Script SQL prueba triggers* *(GitHub)*
-- ♻️**Script PL/SQL procedimientos y fucniones** *(GitHub)*
-- ♻️**Script PL/SQL comprobación procedimientos anon** *(GitHub)*
+- 🧾**Pruebas documentdas**
+- 📃**Documentación del código**
+- 💻**Código del proyecto**
+- ➿**Script SQL estructura**
+- ➿**Script SQL inserción**
+- ➿**Script SQL triggers**
+- ➿**Script SQL prueba triggers**
+- ♻️**Script PL/SQL procedimientos y fucniones**
+- ♻️**Script PL/SQL comprobación procedimientos anon**
 
 
 🔗 **Enlace Trello:** [Fase 2 y 3](https://trello.com/invite/b/67a5fdba23077d7eb9092b51/ATTI11bc185a410123f4e961ff19b7b7448bE6422D45/fase-2)
