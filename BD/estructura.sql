@@ -37,6 +37,7 @@ CREATE TABLE Enfrentamiento (
     id number(5) PRIMARY KEY,
     id_jornada NUMBER(5) not null,
     hora TIMESTAMP not null,
+    fecha DATE NOT NULL,
     CONSTRAINT fk_id_jornada foreign key (id_jornada) references Jornada(id));
 
 CREATE TABLE Jugador (dni VARCHAR(9), nombre VARCHAR(50) NOT NULL, rol VARCHAR(25), nickname VARCHAR(50) NOT NULL UNIQUE,
