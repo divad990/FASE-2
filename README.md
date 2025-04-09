@@ -13,12 +13,9 @@
 
 ### 🔹 PG (Programación)
 #### **Fase 1: Inscripción**
-- ✅ Almacenar jugadores.
-- ✅ Almacenar equipos.
-- 🔄 Gestionar la relación equipo-jugador.
-1. Hacer que solo se pueda meter una vez cada jugador
-2. Mostrar mejor la lista de jugadores
-3. Mirar si se puede meter dentro del crear equipo una redirección al método exclusivo para introducir jugadores
+- 🔄 Login básico (Admins podrán hacer CRUD general, cerrar etapa inscripción, generar calendario, introducir resultados de enfrentamientos, ver todos los informes) (Usuarios podrán visualizar informe de relación de equipos que conforman la competición, visualizar informe correspondiente a resultados de la última jornada)
+- 🔄 CRUD Jugadores
+- 🔄 CRUD Equipos
 - 🔄 Gestionar restricciones.
 - 🔄 Generar jornadas y enfrentamientos, almacenarlos.
 
@@ -56,11 +53,6 @@ procedimiento que está probando y dónde se utiliza en la aplicación Java.
   5. **Una jornada por semana**, los enfrentamientos de cada jornada se jugarán en un día.
   6. No se podrán generar jornadas con equipos de menos de **2 jugadores**.
   7. Una vez generado el calendario de una competición, **se cerrará la Fase 1**.
-
-- **Codificación**:
-  - Implementar el **Diagrama de Clases** en código. *(2H)*
-  - Implementar **alta, baja y modificación** de equipos y jugadores de la competición. *(6H)*
-  - Generación de **jornadas y enfrentamientos** en Java. *(1H)*
 
 #### **Fase 3: Entorno gráfico**
 -🔄 Desarrollo del entorno gráfico de la aplicación siguiendo la estructura MVC.
