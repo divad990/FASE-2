@@ -37,7 +37,6 @@ CREATE TABLE Enfrentamiento (
     id number(5) PRIMARY KEY,
     id_jornada NUMBER(5) not null,
     hora TIMESTAMP not null,
-    fecha DATE NOT NULL,
     CONSTRAINT fk_id_jornada foreign key (id_jornada) references Jornada(id));
 
 CREATE TABLE Jugador (dni VARCHAR(9), nombre VARCHAR(50) NOT NULL, rol VARCHAR(25), nickname VARCHAR(50) NOT NULL UNIQUE,
@@ -54,3 +53,47 @@ CREATE TABLE Partidos (id_equipo NUMBER(5), id_enfrentamiento NUMBER(5), resulta
 CREATE TABLE Competicion (id NUMBER(5) PRIMARY KEY, nombre VARCHAR(50) NOT NULL UNIQUE, estado NUMBER(1) NOT NULL);
 
 CREATE TABLE Usuario (id NUMBER(5) PRIMARY KEY, username VARCHAR2(25), passwd VARCHAR(50), admin NUMBER(1) NOT NULL UNIQUE);
+
+-- Secuencia incremental
+CREATE SEQUENCE incremental_seq
+  START WITH 1
+  INCREMENT BY 1
+  NOCACHE
+  NOCYCLE;
+
+-- Crear el trigger que asigna automáticamente el ID para cada tabla
+CREATE OR REPLACE TRIGGER trg_equipo_inc
+BEFORE INSERT ON equipo
+FOR EACH ROW
+BEGIN
+  IF :new.id IS NULL THEN
+    SELECT incremental_seq.NEXTVAL INTO :new.id FROM dual;
+  END IF;
+END;
+
+CREATE OR REPLACE TRIGGER trg_enfrentamiento_inc
+BEFORE INSERT ON enfrentamiento
+FOR EACH ROW
+BEGIN
+  IF :new.id IS NULL THEN
+    SELECT incremental_seq.NEXTVAL INTO :new.id FROM dual;
+  END IF;
+END;
+
+CREATE OR REPLACE TRIGGER trg_competicion_inc
+BEFORE INSERT ON competicion
+FOR EACH ROW
+BEGIN
+  IF :new.id IS NULL THEN
+    SELECT incremental_seq.NEXTVAL INTO :new.id FROM dual;
+  END IF;
+END;
+
+CREATE OR REPLACE TRIGGER trg_usuario_inc
+BEFORE INSERT ON usuario
+FOR EACH ROW
+BEGIN
+  IF :new.id IS NULL THEN
+    SELECT incremental_seq.NEXTVAL INTO :new.id FROM dual;
+  END IF;
+END;
