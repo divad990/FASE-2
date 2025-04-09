@@ -16,7 +16,7 @@
 - 🔄 Login básico (Admins podrán hacer CRUD general, cerrar etapa inscripción, generar calendario, introducir resultados de enfrentamientos, ver todos los informes) (Usuarios podrán visualizar informe de relación de equipos que conforman la competición, visualizar informe correspondiente a resultados de la última jornada)
 - 🔄 CRUD Jugadores
 - 🔄 CRUD Equipos
-- 🔄 Gestionar restricciones.
+- 🔄 Gestionar restricciones. (BD)
 - 🔄 Generar jornadas y enfrentamientos, almacenarlos.
 
 ### **Fase 1.2: Inscripción BD**
@@ -72,7 +72,7 @@ procedimiento que está probando y dónde se utiliza en la aplicación Java.
 - ➿**Script SQL estructura** *(GitHub)*
 - ➿**Script SQL inserción** *(GitHub)*
 - ➿**Script SQL triggers** *(GitHub)*
-- ➿**Script SQL prueba triggers* *(GitHub)*
+- ➿**Script SQL prueba triggers** *(GitHub)*
 - ♻️**Script PL/SQL procedimientos y fucniones** *(GitHub)*
 - ♻️**Script PL/SQL comprobación procedimientos anon** *(GitHub)*
 
