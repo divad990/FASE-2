@@ -50,4 +50,6 @@ CREATE TABLE Partidos (id_equipo NUMBER(5), id_enfrentamiento NUMBER(5), resulta
                     CONSTRAINT fk_enfrentamientos_id_equipo FOREIGN KEY (id_equipo) REFERENCES equipo(id),
                     CONSTRAINT fk_enfrentamientos_id_enfrentamiento FOREIGN KEY (id_enfrentamiento) REFERENCES Enfrentamiento(id));
 
-CREATE TABLE Competicion (id NUMBER(5) PRIMARY KEY, nombre NOT NULL UNIQUE, estado BOOLEAN NOT NULL);
+CREATE TABLE Competicion (id NUMBER(5) PRIMARY KEY, nombre VARCHAR(50) NOT NULL UNIQUE, estado NUMBER(1) NOT NULL);
+
+CREATE TABLE Usuario (id NUMBER(5) PRIMARY KEY, username VARCHAR2(25), passwd VARCHAR(50), admin NUMBER(1) NOT NULL UNIQUE);
