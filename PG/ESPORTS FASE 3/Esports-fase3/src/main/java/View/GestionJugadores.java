@@ -4,22 +4,33 @@ import javax.swing.*;
 import java.awt.event.*;
 
 public class GestionJugadores extends JDialog {
-    private JPanel contentPane;
-    private JButton buttonOK;
-    private JButton buttonCancel;
+    private JPanel pPrincipal;
+    private JComboBox cbOpciones;
+    private JTextField tfDni;
+    private JTextField tfNombre;
+    private JComboBox cmRol;
+    private JTextField tfNickname;
+    private JTextField tfNacionalidad;
+    private JTextField tfApellido;
+    private JTextField tfFechaNacimiento;
+    private JTextField tfSueldo;
+    private JButton bAceptar;
+    private JButton bCancelar;
+
+    //TODO Funcionalidad botones, restricción y validación de campos, validación de datos.
 
     public GestionJugadores() {
-        setContentPane(contentPane);
+        setContentPane(pPrincipal);
         setModal(true);
-        getRootPane().setDefaultButton(buttonOK);
+        getRootPane().setDefaultButton(bAceptar);
 
-        buttonOK.addActionListener(new ActionListener() {
+        bAceptar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onOK();
             }
         });
 
-        buttonCancel.addActionListener(new ActionListener() {
+        bCancelar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onCancel();
             }
@@ -34,7 +45,7 @@ public class GestionJugadores extends JDialog {
         });
 
         // call onCancel() on ESCAPE
-        contentPane.registerKeyboardAction(new ActionListener() {
+        pPrincipal.registerKeyboardAction(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onCancel();
             }
@@ -56,5 +67,9 @@ public class GestionJugadores extends JDialog {
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);
+    }
+
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
     }
 }
