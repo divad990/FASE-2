@@ -1,5 +1,7 @@
 package View;
 
+import Controller.VistaController;
+
 import javax.swing.*;
 import java.awt.event.*;
 
@@ -17,9 +19,13 @@ public class GestionJugadores extends JDialog {
     private JButton bAceptar;
     private JButton bCancelar;
 
+    private VistaController vistaController;
+
     //TODO Funcionalidad botones, restricción y validación de campos, validación de datos.
 
-    public GestionJugadores() {
+    public GestionJugadores(VistaController vistaController) {
+        this.vistaController = vistaController;
+
         setContentPane(pPrincipal);
         setModal(true);
         getRootPane().setDefaultButton(bAceptar);
@@ -60,6 +66,11 @@ public class GestionJugadores extends JDialog {
             @Override
             public void focusLost(FocusEvent e) {
                 super.focusLost(e);
+                if (vistaController.validarDni==true){
+
+                } else {
+
+                }
             }
         });
         tfNombre.addFocusListener(new FocusAdapter() {
