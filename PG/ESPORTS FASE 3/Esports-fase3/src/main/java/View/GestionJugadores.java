@@ -1,6 +1,7 @@
 package View;
 
 import Controller.VistaController;
+import Exceptions.CampoVacioException;
 
 import javax.swing.*;
 import java.awt.event.*;
@@ -18,13 +19,39 @@ public class GestionJugadores extends JDialog {
     private JTextField tfSueldo;
     private JButton bAceptar;
     private JButton bCancelar;
+    private JLabel a1;
+    private JLabel a2;
+    private JLabel a3;
+    private JLabel a4;
+    private JLabel a5;
+    private JLabel a6;
+    private JLabel a7;
+    private JLabel a8;
+    private JLabel e1;
+    private JLabel e2;
+    private JLabel e3;
+    private JLabel e4;
+    private JLabel e5;
+    private JLabel e6;
+    private JLabel e7;
+    private JLabel e8;
+
+    private JLabel[] labels = {a1, a2, a3, a4, a5, a6, a7, a8, e1, e2, e3, e4, e5, e6, e7, e8};
 
     private VistaController vistaController;
+
 
     //TODO Funcionalidad botones, restricción y validación de campos, validación de datos.
 
     public GestionJugadores(VistaController vistaController) {
         this.vistaController = vistaController;
+        GestionJugadores dialog = new GestionJugadores(vistaController);
+        dialog.pack();
+        dialog.setVisible(true);
+
+        for (JLabel label : labels) {
+            label.setVisible(false);
+        }
 
         setContentPane(pPrincipal);
         setModal(true);
@@ -66,10 +93,14 @@ public class GestionJugadores extends JDialog {
             @Override
             public void focusLost(FocusEvent e) {
                 super.focusLost(e);
-                if (vistaController.validarDni==true){
+                try {
+                if (vistaController.validarDni(tfDni.getText(),"[0-9]{8}[A-Za-z]")==false){
+                    //Mostrar formato correcto
+                }
+                } catch (CampoVacioException ex) {
 
-                } else {
-
+                } catch (Exception ex) {
+                    // Manejar la excepción de otra manera si es necesario
                 }
             }
         });
@@ -119,13 +150,6 @@ public class GestionJugadores extends JDialog {
     private void onCancel() {
         // add your code here if necessary
         dispose();
-    }
-
-    public static void main(String[] args) {
-        GestionJugadores dialog = new GestionJugadores();
-        dialog.pack();
-        dialog.setVisible(true);
-        System.exit(0);
     }
 
     private void createUIComponents() {
