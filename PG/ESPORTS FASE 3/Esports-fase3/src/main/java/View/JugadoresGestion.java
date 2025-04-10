@@ -6,19 +6,17 @@ import Exceptions.CampoVacioException;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class GestionJugadores2 extends JFrame {
-    private JPanel pPrincipal;
+public class JugadoresGestion extends JFrame {
+    private JPanel pInterno;
     private JComboBox cbOpciones;
     private JTextField tfDni;
     private JTextField tfNombre;
-    private JComboBox cmRol;
     private JTextField tfNickname;
     private JTextField tfNacionalidad;
     private JTextField tfApellido;
+    private JComboBox cmRol;
     private JTextField tfFechaNacimiento;
     private JTextField tfSueldo;
-    private JButton bAceptar;
-    private JButton bCancelar;
     private JLabel a1;
     private JLabel a2;
     private JLabel a3;
@@ -35,6 +33,9 @@ public class GestionJugadores2 extends JFrame {
     private JLabel e6;
     private JLabel e7;
     private JLabel e8;
+    private JButton bAceptar;
+    private JButton bCancelar;
+    private JPanel pPrincipal;
 
     private VistaController vistaController;
 
@@ -42,7 +43,7 @@ public class GestionJugadores2 extends JFrame {
 
     //TODO Funcionalidad botones, restricción y validación de campos, validación de datos.
 
-    public GestionJugadores(VistaController vistaController) {
+    public JugadoresGestion(VistaController vistaController) {
         this.vistaController = vistaController;
 
         /*for (JLabel label : labels) {
@@ -96,9 +97,9 @@ public class GestionJugadores2 extends JFrame {
             public void focusLost(FocusEvent e) {
                 super.focusLost(e);
                 try {
-                if (vistaController.validarDni(tfDni.getText(),"[0-9]{8}[A-Za-z]")==false){
-                    //Mostrar formato correcto
-                }
+                    if (vistaController.validarDni(tfDni.getText(),"[0-9]{8}[A-Za-z]")==false){
+                        //Mostrar formato correcto
+                    }
                 } catch (CampoVacioException ex) {
 
                 } catch (Exception ex) {
@@ -154,7 +155,6 @@ public class GestionJugadores2 extends JFrame {
         dispose();
     }
 
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
-    }
 }
+
+
