@@ -6,7 +6,7 @@ public class Main {
     private static Controller.VistaController vistaController;
 
     public static void main(String[] args) {
-
+        crearObjetos();
     }
 
     public static void crearObjetos()
