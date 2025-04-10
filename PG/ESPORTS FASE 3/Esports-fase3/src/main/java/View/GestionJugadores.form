@@ -172,7 +172,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="54683" class="javax.swing.JLabel">
+          <component id="54683" class="javax.swing.JLabel" binding="a1">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -183,7 +183,7 @@
               <text value="* No cumple con el formato (12345678A)"/>
             </properties>
           </component>
-          <component id="ead67" class="javax.swing.JLabel">
+          <component id="ead67" class="javax.swing.JLabel" binding="a2">
             <constraints>
               <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -193,7 +193,7 @@
               <text value="* No cumple con el formato (x carácteres)"/>
             </properties>
           </component>
-          <component id="672cf" class="javax.swing.JLabel">
+          <component id="672cf" class="javax.swing.JLabel" binding="a3">
             <constraints>
               <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -203,7 +203,7 @@
               <text value="* No cumple con el formato (x carácteres)"/>
             </properties>
           </component>
-          <component id="a231f" class="javax.swing.JLabel">
+          <component id="a231f" class="javax.swing.JLabel" binding="a4">
             <constraints>
               <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -213,7 +213,7 @@
               <text value="* No cumple con el formato (x carácteres)"/>
             </properties>
           </component>
-          <component id="e97a8" class="javax.swing.JLabel">
+          <component id="e97a8" class="javax.swing.JLabel" binding="a5">
             <constraints>
               <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -223,7 +223,7 @@
               <text value="* No cumple con el formato (x carácteres)"/>
             </properties>
           </component>
-          <component id="4845c" class="javax.swing.JLabel">
+          <component id="4845c" class="javax.swing.JLabel" binding="a6">
             <constraints>
               <grid row="16" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -233,7 +233,7 @@
               <text value="* No cumple con el formato (x carácteres)"/>
             </properties>
           </component>
-          <component id="ca0dc" class="javax.swing.JLabel">
+          <component id="ca0dc" class="javax.swing.JLabel" binding="a7">
             <constraints>
               <grid row="19" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -243,7 +243,7 @@
               <text value="* No cumple con el formato (x carácteres)"/>
             </properties>
           </component>
-          <component id="a544b" class="javax.swing.JLabel">
+          <component id="a544b" class="javax.swing.JLabel" binding="a8">
             <constraints>
               <grid row="22" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -253,7 +253,7 @@
               <text value="* No cumple con el formato (x carácteres)"/>
             </properties>
           </component>
-          <component id="f8b12" class="javax.swing.JLabel">
+          <component id="f8b12" class="javax.swing.JLabel" binding="e1">
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -264,7 +264,7 @@
               <text value="* El campo es obligatorio"/>
             </properties>
           </component>
-          <component id="26049" class="javax.swing.JLabel">
+          <component id="26049" class="javax.swing.JLabel" binding="e2">
             <constraints>
               <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -275,7 +275,7 @@
               <text value="* El campo es obligatorio"/>
             </properties>
           </component>
-          <component id="5699c" class="javax.swing.JLabel">
+          <component id="5699c" class="javax.swing.JLabel" binding="e3">
             <constraints>
               <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -286,7 +286,7 @@
               <text value="* El campo es obligatorio"/>
             </properties>
           </component>
-          <component id="b096c" class="javax.swing.JLabel">
+          <component id="b096c" class="javax.swing.JLabel" binding="e4">
             <constraints>
               <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -297,7 +297,7 @@
               <text value="* El campo es obligatorio"/>
             </properties>
           </component>
-          <component id="a7d69" class="javax.swing.JLabel">
+          <component id="a7d69" class="javax.swing.JLabel" binding="e5">
             <constraints>
               <grid row="14" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -308,7 +308,7 @@
               <text value="* El campo es obligatorio"/>
             </properties>
           </component>
-          <component id="58ef0" class="javax.swing.JLabel">
+          <component id="58ef0" class="javax.swing.JLabel" binding="e6">
             <constraints>
               <grid row="17" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -319,7 +319,7 @@
               <text value="* El campo es obligatorio"/>
             </properties>
           </component>
-          <component id="80b5a" class="javax.swing.JLabel">
+          <component id="80b5a" class="javax.swing.JLabel" binding="e7">
             <constraints>
               <grid row="20" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -330,7 +330,7 @@
               <text value="* El campo es obligatorio"/>
             </properties>
           </component>
-          <component id="e8aea" class="javax.swing.JLabel">
+          <component id="e8aea" class="javax.swing.JLabel" binding="e8">
             <constraints>
               <grid row="23" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
