@@ -26,7 +26,7 @@ public class MenuOpciones extends JFrame {
 
         // ActionListeners para cada botón (excepto OK y Cancel)
         generarCalendarioDeCompeticiónButton.addActionListener(e -> {
-
+            
         });
 
         cerrarEtapaDeInscripciónButton.addActionListener(e -> {
