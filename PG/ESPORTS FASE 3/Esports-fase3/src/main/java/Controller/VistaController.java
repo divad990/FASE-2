@@ -2,6 +2,7 @@ package Controller;
 
 import Exceptions.CampoVacioException;
 import Utils.*;
+import View.JugadoresGestion;
 
 public class VistaController {
 
@@ -11,15 +12,12 @@ public class VistaController {
         this.modeloController = new ModeloController();
     }
 
-    public boolean validarDni(String dato, String expresionRegular) throws CampoVacioException {
+    public boolean validarDato(String dato, String expresionRegular) throws CampoVacioException {
         return Utilidades.validarDato(dato, expresionRegular);
     }
     public void iniciarGestionJugadores() {
-        GestionJugadores gestionJugadores = new GestionJugadores(this);
+        JugadoresGestion gestionJugadores = new JugadoresGestion(this);
         gestionJugadores.setVisible(true); //Hace visible la ventana
         gestionJugadores.setLocationRelativeTo(null); //Centra la ventana
     }
-
-
-
 }
