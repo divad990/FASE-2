@@ -1,5 +1,7 @@
 package Controller;
 
+import Model.Equipo;
+import Model.Jugador;
 import Model.Usuario;
 import Model.UsuarioDAO;
 import Utils.BaseDatos;
@@ -45,7 +47,6 @@ public class ModeloController {
     public void setVistaController(VistaController vistaController) {
         this.vistaController = vistaController;
     }
-
     public boolean validarDni(String dni) {
         return jugadorController.validarDni(dni);
     }
@@ -55,13 +56,20 @@ public class ModeloController {
     public void crearJugador(String dni, String nombre, String apellido, String nickname, String nacionalidad, String rol, java.sql.Date fechaNacimiento, BigDecimal sueldo) {
         jugadorController.crearJugador(dni, nombre, apellido, nickname, nacionalidad, rol, fechaNacimiento, sueldo);
     }
-    public void modificarJugador(String dni, String nombre, String apellido, String nickname, String nacionalidad, String rol, java.sql.Date fechaNacimiento, BigDecimal sueldo) {
-        jugadorController.modificarJugador(dni, nombre, apellido, nickname, nacionalidad, rol, fechaNacimiento, sueldo);
+    public void modificarJugador(String dni, String nombre, String apellido, String nickname, String nacionalidad, String rol, java.sql.Date fechaNacimiento, BigDecimal sueldo, String equipo) {
+        Equipo equipoE = new Equipo();
+        if (!equipo.isEmpty()) {
+            equipoE = equipoController.obtenerEquipo(equipo);
+        }
+        jugadorController.modificarJugador(dni, nombre, apellido, nickname, nacionalidad, rol, fechaNacimiento, sueldo, equipoE);
     }
     public void eliminarJugador(String dni) {
         jugadorController.eliminarJugador(dni);
     }
     public List<String> obtenerEquipos() {
         return equipoController.obtenerEquipos();
+    }
+    public Jugador obtenerJugador(String nif) {
+        return jugadorController.obtenerJugador(nif);
     }
 }

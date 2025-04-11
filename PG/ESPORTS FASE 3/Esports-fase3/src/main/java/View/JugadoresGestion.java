@@ -39,6 +39,7 @@ public class JugadoresGestion extends JFrame {
     private JPanel pDatos;
     private JPanel pDni;
     private JComboBox cbEquipo;
+    private String nif;
 
     private VistaController vistaController;
 
@@ -309,14 +310,14 @@ public class JugadoresGestion extends JFrame {
             if (vistaController.validarNickname(tfNickname.getText())){
                 JOptionPane.showMessageDialog(this, "El nickname introducido ya está en uso", "Error", JOptionPane.ERROR_MESSAGE);
             } else {
-                vistaController.modificarJugador(tfDni.getText(), tfNombre.getText(), tfApellido.getText(), tfNickname.getText(), tfNacionalidad.getText(), cmRol.getSelectedItem().toString(), tfFechaNacimiento.getText(), tfSueldo.getText());
+                vistaController.modificarJugador(tfDni.getText(), tfNombre.getText(), tfApellido.getText(), tfNickname.getText(), tfNacionalidad.getText(), cmRol.getSelectedItem().toString(), tfFechaNacimiento.getText(), tfSueldo.getText(), cbEquipo.getSelectedItem().toString());
                 JOptionPane.showMessageDialog(this, "Jugador con nif "+tfDni.getText()+" modificado correctamente", "Jugador Creado", JOptionPane.INFORMATION_MESSAGE );
             }
        } else if (cbOpciones.getSelectedItem().equals("Eliminar Jugador")) {
             vistaController.eliminarJugador(tfDni.getText());
             JOptionPane.showMessageDialog(this,"Jugador con nif "+tfDni.getText()+" eliminado correctamente", "Jugador Eliminado", JOptionPane.INFORMATION_MESSAGE );
        } else if (cbOpciones.getSelectedItem().equals("Mostrar Jugador")) {
-
+            vistaController.iniciarJugador(tfDni.getText());
        }
         dispose();
         vistaController.iniciarMenuOpciones();
@@ -326,7 +327,7 @@ public class JugadoresGestion extends JFrame {
         vistaController.iniciarMenuOpciones();
     }
     private void validarCampos() {
-        if (cbOpciones.getSelectedItem().equals("Crear Jugador") || cbOpciones.getSelectedItem().equals("Modificar Jugador")) {
+        if (cbOpciones.getSelectedItem().equals("Crear Jugador")) {
             boolean todosCompletos = !tfDni.getText().trim().isEmpty() &&
                     !tfNombre.getText().trim().isEmpty() &&
                     !tfApellido.getText().trim().isEmpty() &&
@@ -347,6 +348,16 @@ public class JugadoresGestion extends JFrame {
             // Habilitar el botón solo si todos los campos están completos y no hay errores
             bAceptar.setEnabled(todosCompletos && !hayErrores);
         } else if (cbOpciones.getSelectedItem().equals("Eliminar Jugador") || cbOpciones.getSelectedItem().equals("Mostrar Jugador")) {
+            boolean todosCompletos = !tfDni.getText().trim().isEmpty();
+            boolean hayErrores = false;
+            for (JLabel label : labels) {
+                if (label.isVisible()) {
+                    hayErrores = true;
+                    break;
+                }
+            }
+            bAceptar.setEnabled(todosCompletos && !hayErrores);
+        } else if (cbOpciones.getSelectedItem().equals("Modificar Jugador")){
             boolean todosCompletos = !tfDni.getText().trim().isEmpty();
             boolean hayErrores = false;
             for (JLabel label : labels) {

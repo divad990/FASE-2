@@ -14,11 +14,9 @@ public class Main {
 
     public static void crearObjetos()
     {
-        // Modelo
         modeloController = new Controller.ModeloController();
         vistaController = new Controller.VistaController();
         modeloController.setVistaController(vistaController);
-
     }
 
 }

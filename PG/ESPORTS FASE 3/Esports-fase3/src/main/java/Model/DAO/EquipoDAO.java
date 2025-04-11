@@ -1,5 +1,6 @@
 package Model.DAO;
 
+import Model.Equipo;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 
@@ -27,5 +28,17 @@ public class EquipoDAO {
             return null;
         }
     }
-
+    public Equipo obtenerEquipo(String nombre) {
+        try {
+            t.begin();
+            Equipo equipo = em.createQuery("SELECT e FROM Equipo e WHERE e.nombre = :nombre", Equipo.class)
+                    .setParameter("nombre", nombre)
+                    .getSingleResult();
+            t.commit();
+            return equipo;
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al obtener el equipo de la base de datos: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            return null;
+        }
+    }
 }

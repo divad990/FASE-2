@@ -1,15 +1,15 @@
 package Controller;
 
-import View.VentanaInicio;
-import View.VentanaLogIn;
+import Model.Jugador;
+import View.*;
 import Exceptions.CampoVacioException;
 import Utils.*;
-import View.JugadoresGestion;
-import View.MenuOpciones;
+
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 
 public class VistaController {
 
@@ -45,10 +45,16 @@ public class VistaController {
         Date fechaNacimiento = fechaOracle(nacimiento);
         modeloController.crearJugador(dni,nombre,apellido,nickname,nacionalidad,rol,fechaNacimiento,sueldoInt);
     }
-    public void modificarJugador(String dni, String nombre, String apellido, String nickname, String nacionalidad, String rol, String nacimiento, String sueldo) {
-        BigDecimal sueldoInt = BigDecimal.valueOf(Integer.parseInt(sueldo));
-        Date fechaNacimiento = fechaOracle(nacimiento);
-        modeloController.modificarJugador(dni,nombre,apellido,nickname,nacionalidad,rol,fechaNacimiento,sueldoInt);
+    public void modificarJugador(String dni, String nombre, String apellido, String nickname, String nacionalidad, String rol, String nacimiento, String sueldo, String equipo) {
+        BigDecimal sueldoInt = null;
+        Date fechaNacimiento = null;
+        if (!Objects.equals(sueldo, "")) {
+            sueldoInt = BigDecimal.valueOf(Integer.parseInt(sueldo));
+        }
+        if (!Objects.equals(nacimiento, "")) {
+            fechaNacimiento = fechaOracle(nacimiento);
+        }
+        modeloController.modificarJugador(dni,nombre,apellido,nickname,nacionalidad,rol,fechaNacimiento,sueldoInt, equipo);
     }
     public void eliminarJugador(String dni) {
         modeloController.eliminarJugador(dni);
@@ -70,6 +76,13 @@ public class VistaController {
     public void iniciarPrincipal() {
         vInicio = new VentanaInicio(this);
         vInicio.setVisible(true);
+    }
+    public Jugador obtenerJugador(String nif){
+        return modeloController.obtenerJugador(nif);
+    }
+    public void iniciarJugador(String nif){
+        MostrarJugador jugador = new MostrarJugador(this, nif);
+        jugador.setVisible(true);
     }
 
     // Funciones complementarias

@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.DAO.EquipoDAO;
+import Model.Equipo;
 import Utils.BaseDatos;
 
 import java.util.List;
@@ -15,6 +16,9 @@ public class EquipoController {
 
     public List<String> obtenerEquipos() {
         return equipoDAO.obtenerEquipos();
+    }
+    public Equipo obtenerEquipo(String equipo) {
+        return equipoDAO.obtenerEquipo(equipo);
     }
 
 }
