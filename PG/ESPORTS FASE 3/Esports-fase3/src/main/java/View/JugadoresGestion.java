@@ -288,17 +288,13 @@ public class JugadoresGestion extends JFrame {
                 } else if (cbOpciones.getSelectedItem().equals("Crear Jugador")) {
                     pDatos.setVisible(true);
                     pDni.setVisible(true);
-                } else if (cbOpciones.getSelectedItem().equals("Modificar Jugador")) {
-                    pDatos.setVisible(false);
-                    pDni.setVisible(true);
-                } else if (cbOpciones.getSelectedItem().equals("Eliminar Jugador")) {
+                } else if (cbOpciones.getSelectedItem().equals("Modificar Jugador") || cbOpciones.getSelectedItem().equals("Eliminar Jugador") || cbOpciones.getSelectedItem().equals("Mostrar Jugador")) {
                     pDatos.setVisible(false);
                     pDni.setVisible(true);
                 }
             }
         });
     }
-    //TODO Externalizar los JOption es labor del view o del controller???
     private void onOK() {
        if (cbOpciones.getSelectedItem().equals("Crear Jugador")) {
            if (vistaController.validarDni(tfDni.getText())){
@@ -323,29 +319,41 @@ public class JugadoresGestion extends JFrame {
    }
     private void onCancel() {
         dispose();
-        vistaController.iniciarPrincipal();
+        vistaController.iniciarMenuOpciones();
     }
     private void validarCampos() {
-        boolean todosCompletos = !tfDni.getText().trim().isEmpty() &&
-                !tfNombre.getText().trim().isEmpty() &&
-                !tfApellido.getText().trim().isEmpty() &&
-                !tfNickname.getText().trim().isEmpty() &&
-                !tfNacionalidad.getText().trim().isEmpty() &&
-                !tfFechaNacimiento.getText().trim().isEmpty() &&
-                !tfSueldo.getText().trim().isEmpty() &&
-                !cmRol.getSelectedItem().toString().isEmpty();
 
-        // Verificar si hay algún JLabel de error visible
-        boolean hayErrores = false;
-        for (JLabel label : labels) {
-            if (label.isVisible()) {
-                hayErrores = true;
-                break;
+        if (cbOpciones.getSelectedItem().equals("Crear Jugador") || cbOpciones.getSelectedItem().equals("Modificar Jugador")) {
+            boolean todosCompletos = !tfDni.getText().trim().isEmpty() &&
+                    !tfNombre.getText().trim().isEmpty() &&
+                    !tfApellido.getText().trim().isEmpty() &&
+                    !tfNickname.getText().trim().isEmpty() &&
+                    !tfNacionalidad.getText().trim().isEmpty() &&
+                    !tfFechaNacimiento.getText().trim().isEmpty() &&
+                    !tfSueldo.getText().trim().isEmpty() &&
+                    !cmRol.getSelectedItem().toString().isEmpty();
+
+            // Verificar si hay algún JLabel de error visible
+            boolean hayErrores = false;
+            for (JLabel label : labels) {
+                if (label.isVisible()) {
+                    hayErrores = true;
+                    break;
+                }
             }
+            // Habilitar el botón solo si todos los campos están completos y no hay errores
+            bAceptar.setEnabled(todosCompletos && !hayErrores);
+        } else if (cbOpciones.getSelectedItem().equals("Eliminar Jugador") || cbOpciones.getSelectedItem().equals("Mostrar Jugador")) {
+            boolean todosCompletos = !tfDni.getText().trim().isEmpty();
+            boolean hayErrores = false;
+            for (JLabel label : labels) {
+                if (label.isVisible()) {
+                    hayErrores = true;
+                    break;
+                }
+            }
+            bAceptar.setEnabled(todosCompletos && !hayErrores);
         }
-
-        // Habilitar el botón solo si todos los campos están completos y no hay errores
-        bAceptar.setEnabled(todosCompletos && !hayErrores);
     }
     private void rellenarEquipos() {
         try {

@@ -42,6 +42,7 @@
                     <item value="Crear Jugador"/>
                     <item value="Eliminar Jugador"/>
                     <item value="Modificar Jugador"/>
+                    <item value="Mostrar Jugador"/>
                   </model>
                 </properties>
               </component>
