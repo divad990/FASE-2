@@ -1,4 +1,4 @@
-package Model;
+package Model.DAO;
 
 public class PartidoDAO {
 }
