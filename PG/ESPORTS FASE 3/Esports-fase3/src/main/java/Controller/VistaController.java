@@ -21,6 +21,9 @@ public class VistaController {
         gestionJugadores.setLocationRelativeTo(null); //Centra la ventana
     }
     public boolean validarDni(String dni) {
-        modeloController.validarDni(dni);
+        return modeloController.validarDni(dni);
+    }
+    public boolean validarNickname(String nickname) {
+        return modeloController.validarNickname(nickname);
     }
 }

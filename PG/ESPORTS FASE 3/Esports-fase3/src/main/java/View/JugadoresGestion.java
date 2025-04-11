@@ -276,8 +276,10 @@ public class JugadoresGestion extends JFrame {
 
     private void onOK() {
         // Validar dni en base de datos si es existente o no, validar si los datos unique cumplen.
-        if (!vistaController.validarDni(tfDni.getText())){
-            // Mostrar mensaje de error
+        if (vistaController.validarDni(tfDni.getText())){
+            JOptionPane.showMessageDialog(this, "Ya existe un Jugador con ese DNI", "Error", JOptionPane.ERROR_MESSAGE);
+        } else if(vistaController.validarNickname(tfNickname.getText())){
+            JOptionPane.showMessageDialog(this, "El nickname introducido ya está en uso", "Error", JOptionPane.ERROR_MESSAGE);
         }
 
         dispose();
