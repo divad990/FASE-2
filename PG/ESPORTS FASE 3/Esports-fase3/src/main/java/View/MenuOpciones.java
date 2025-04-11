@@ -1,57 +1,61 @@
 package View;
 
-public class MenuOpciones extends javax.swing.JDialog {
-    private javax.swing.JPanel contentPane;
-    private javax.swing.JButton buttonOK;
-    private javax.swing.JButton buttonCancel;
+import javax.swing.*;
+
+public class MenuOpciones extends JDialog {
+    private JPanel contentPane;
+    private JButton buttonOK;
+    private JButton buttonCancel;
+    private JButton generarCalendarioDeCompeticiónButton;
+    private JButton cerrarEtapaDeInscripciónButton;
+    private JButton gestiónDeJugadoresButton;
+    private JButton gestiónDeEquiposButton;
+    private JButton introducirResultadosButton;
+    private JButton verInformesButton;
 
     public MenuOpciones() {
         setContentPane(contentPane);
         setModal(true);
+        setTitle("Menú de Opciones");
+        setSize(500, 400);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         getRootPane().setDefaultButton(buttonOK);
 
-        buttonOK.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                onOK();
-            }
+        // ActionListeners para cada botón (excepto OK y Cancel)
+        generarCalendarioDeCompeticiónButton.addActionListener(e -> {
+
         });
 
-        buttonCancel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                onCancel();
-            }
+        cerrarEtapaDeInscripciónButton.addActionListener(e -> {
+
         });
 
-        // call onCancel() when cross is clicked
-        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowClosing(java.awt.event.WindowEvent e) {
-                onCancel();
-            }
+        gestiónDeJugadoresButton.addActionListener(e -> {
+
         });
 
-        // call onCancel() on ESCAPE
-        contentPane.registerKeyboardAction(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                onCancel();
-            }
-        }, javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE, 0), javax.swing.JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-    }
+        gestiónDeEquiposButton.addActionListener(e -> {
 
-    private void onOK() {
-        // add your code here
-        dispose();
-    }
+        });
 
-    private void onCancel() {
-        // add your code here if necessary
-        dispose();
+        introducirResultadosButton.addActionListener(e -> {
+
+        });
+
+        verInformesButton.addActionListener(e -> {
+
+        });
+
+        // Botones OK y Cancel solo cierran la ventana
+        buttonOK.addActionListener(e -> dispose());
+        buttonCancel.addActionListener(e -> dispose());
     }
 
     public static void main(String[] args) {
-        MenuOpciones dialog = new MenuOpciones();
-        dialog.pack();
-        dialog.setVisible(true);
-        System.exit(0);
+        SwingUtilities.invokeLater(() -> {
+            MenuOpciones dialog = new MenuOpciones();
+            dialog.setVisible(true);
+        });
     }
 }
