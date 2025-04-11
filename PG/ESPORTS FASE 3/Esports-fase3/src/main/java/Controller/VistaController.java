@@ -35,6 +35,16 @@ public class VistaController {
         Date fechaNacimiento = fechaOracle(nacimiento);
         modeloController.crearJugador(dni,nombre,apellido,nickname,nacionalidad,rol,fechaNacimiento,sueldoInt);
     }
+    public void modificarJugador(String dni, String nombre, String apellido, String nickname, String nacionalidad, String rol, String nacimiento, String sueldo) {
+        BigDecimal sueldoInt = BigDecimal.valueOf(Integer.parseInt(sueldo));
+        Date fechaNacimiento = fechaOracle(nacimiento);
+        modeloController.modificarJugador(dni,nombre,apellido,nickname,nacionalidad,rol,fechaNacimiento,sueldoInt);
+    }
+    public void eliminarJugador(String dni) {
+        modeloController.eliminarJugador(dni);
+    }
+
+    // Funciones complementarias
     public Date fechaOracle(String fecha) {
         String[] fechaSplit = fecha.split("/");
         int dia = Integer.parseInt(fechaSplit[0]);

@@ -4,6 +4,7 @@ import Controller.VistaController;
 import Exceptions.CampoVacioException;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 
 public class JugadoresGestion extends JFrame {
@@ -36,6 +37,7 @@ public class JugadoresGestion extends JFrame {
     private JLabel e8;
     private JPanel pDatos;
     private JLabel jlDni;
+    private JPanel pDni;
 
     private VistaController vistaController;
 
@@ -52,6 +54,7 @@ public class JugadoresGestion extends JFrame {
         }
         bAceptar.setEnabled(false);
         pDatos.setVisible(false);
+        pDni.setVisible(false);
 
         setContentPane(pPrincipal);
         setSize(600, 600);
@@ -109,6 +112,19 @@ public class JugadoresGestion extends JFrame {
                     JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
                 validarCampos();
+                if (!cbOpciones.getSelectedItem().toString().equals("Crear Jugador")) {
+                    if (vistaController.validarDni(tfDni.getText())) {
+                        if (cbOpciones.getSelectedItem().toString().equals("Modificar Jugador")) {
+                            pDatos.setVisible(true);
+                        } else {
+                            tfDni.setForeground(Color.GREEN);
+                        }
+
+                    } else {
+                        tfDni.setForeground(Color.red);
+                        JOptionPane.showMessageDialog(null, "No existe un jugador con ese DNI", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
             }
         });
         tfNombre.addFocusListener(new FocusAdapter() {
@@ -268,28 +284,41 @@ public class JugadoresGestion extends JFrame {
                     JOptionPane.showMessageDialog(null, "Debes seleccionar una opción");
                 } else if (cbOpciones.getSelectedItem().equals("Crear Jugador")) {
                     pDatos.setVisible(true);
+                    pDni.setVisible(true);
                 } else if (cbOpciones.getSelectedItem().equals("Modificar Jugador")) {
-                    pDatos.setVisible(true);
+                    pDatos.setVisible(false);
+                    pDni.setVisible(true);
                 } else if (cbOpciones.getSelectedItem().equals("Eliminar Jugador")) {
                     pDatos.setVisible(false);
-                    jlDni.setVisible(true);
-                    tfDni.setVisible(true);
+                    pDni.setVisible(true);
                 }
             }
         });
     }
     //TODO Externalizar los JOption es labor del view o del controller??
     private void onOK() {
-        // Validar dni en base de datos si es existente o no, validar si los datos unique cumplen.
-        if (vistaController.validarDni(tfDni.getText())){
-            JOptionPane.showMessageDialog(this, "Ya existe un Jugador con ese DNI", "Error", JOptionPane.ERROR_MESSAGE);
-        } else if(vistaController.validarNickname(tfNickname.getText())){
-            JOptionPane.showMessageDialog(this, "El nickname introducido ya está en uso", "Error", JOptionPane.ERROR_MESSAGE);
-        } else {
-            vistaController.crearJugador(tfDni.getText(), tfNombre.getText(), tfApellido.getText(), tfNickname.getText(), tfNacionalidad.getText(), cmRol.getSelectedItem().toString(), tfFechaNacimiento.getText(), tfSueldo.getText());
-            JOptionPane.showMessageDialog(this, "Jugador con nif "+tfNombre.getText()+" creado correctamente", "Jugador Creado", JOptionPane.INFORMATION_MESSAGE );
-        }
-    }
+       if (cbOpciones.getSelectedItem().equals("Crear Jugador")) {
+           if (vistaController.validarDni(tfDni.getText())){
+               JOptionPane.showMessageDialog(this, "Ya existe un Jugador con ese DNI", "Error", JOptionPane.ERROR_MESSAGE);
+           } else if(vistaController.validarNickname(tfNickname.getText())){
+               JOptionPane.showMessageDialog(this, "El nickname introducido ya está en uso", "Error", JOptionPane.ERROR_MESSAGE);
+           } else {
+               vistaController.crearJugador(tfDni.getText(), tfNombre.getText(), tfApellido.getText(), tfNickname.getText(), tfNacionalidad.getText(), cmRol.getSelectedItem().toString(), tfFechaNacimiento.getText(), tfSueldo.getText());
+               JOptionPane.showMessageDialog(this, "Jugador con nif "+tfDni.getText()+" creado correctamente", "Jugador Creado", JOptionPane.INFORMATION_MESSAGE );
+           }
+       } else if (cbOpciones.getSelectedItem().equals("Modificar Jugador")) {
+            if (vistaController.validarNickname(tfNickname.getText())){
+                JOptionPane.showMessageDialog(this, "El nickname introducido ya está en uso", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                vistaController.modificarJugador(tfDni.getText(), tfNombre.getText(), tfApellido.getText(), tfNickname.getText(), tfNacionalidad.getText(), cmRol.getSelectedItem().toString(), tfFechaNacimiento.getText(), tfSueldo.getText());
+                JOptionPane.showMessageDialog(this, "Jugador con nif "+tfDni.getText()+" modificado correctamente", "Jugador Creado", JOptionPane.INFORMATION_MESSAGE );
+            }
+       } else if (cbOpciones.getSelectedItem().equals("Eliminar Jugador")) {
+            vistaController.eliminarJugador(tfDni.getText());
+            JOptionPane.showMessageDialog(this,"Jugador con nif "+tfDni.getText()+" eliminado correctamente", "Jugador Eliminado", JOptionPane.INFORMATION_MESSAGE );
+       }
+   }
+
 
     private void onCancel() {
         // add your code here if necessary
