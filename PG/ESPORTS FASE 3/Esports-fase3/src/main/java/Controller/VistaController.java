@@ -56,7 +56,21 @@ public class VistaController {
     public List<String> obtenerEquipos(){
         return modeloController.obtenerEquipos();
     }
-
+    public boolean buscarUsuario(String username) throws Exception {
+        return modeloController.buscarUsuario(username);
+    }
+    public boolean buscarUsuarioContrasenia(String password) throws Exception {
+        return modeloController.buscarUsuarioContrasenia(password);
+    }
+    public void mostrarAccesoLogIn() {
+        vLogin = new VentanaLogIn(this);
+        vLogin.setVisible(true);
+        vInicio.dispose();
+    }
+    public void iniciarPrincipal() {
+        vInicio = new VentanaInicio(this);
+        vInicio.setVisible(true);
+    }
 
     // Funciones complementarias
     public Date fechaOracle(String fecha) {
@@ -68,21 +82,6 @@ public class VistaController {
         LocalDate fechaLocalDate = LocalDate.of(anio, mes, dia);
         return Date.valueOf(fechaLocalDate);
     }
-    public boolean buscarUsuario(String username) throws Exception {
-        return modeloController.buscarUsuario(username);
-    }
-    public boolean buscarUsuarioContrasenia(String password) throws Exception {
-        return modeloController.buscarUsuarioContrasenia(password);
-    }
-    public void mostrarAccesoLogIn()
-    {
-        vLogin = new VentanaLogIn(this);
-        vLogin.setVisible(true);
-        vInicio.dispose();
-    }
-    public void iniciarPrincipal() {
-        vInicio = new VentanaInicio(this);
-        vInicio.setVisible(true);
-    }
+
 
 }
