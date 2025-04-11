@@ -322,8 +322,8 @@ public class JugadoresGestion extends JFrame {
        }
    }
     private void onCancel() {
-        // add your code here if necessary
         dispose();
+        vistaController.iniciarPrincipal();
     }
     private void validarCampos() {
         boolean todosCompletos = !tfDni.getText().trim().isEmpty() &&
