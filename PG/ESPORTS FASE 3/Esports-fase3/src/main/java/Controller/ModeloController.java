@@ -1,12 +1,16 @@
 package Controller;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public class ModeloController {
 
     private VistaController vistaController;
-    private JugadorController jugadorController;
+    private final JugadorController jugadorController;
+    private final EquipoController equipoController;
+
     public ModeloController() {
+        this.equipoController = new EquipoController();
         this.jugadorController = new JugadorController();
     }
 
@@ -32,5 +36,8 @@ public class ModeloController {
     }
     public void eliminarJugador(String dni) {
         jugadorController.eliminarJugador(dni);
+    }
+    public List<String> obtenerEquipos() {
+        return equipoController.obtenerEquipos();
     }
 }

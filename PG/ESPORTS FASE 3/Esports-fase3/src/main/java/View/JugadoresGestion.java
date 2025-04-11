@@ -35,9 +35,10 @@ public class JugadoresGestion extends JFrame {
     private JLabel e6;
     private JLabel e7;
     private JLabel e8;
-    private JPanel pDatos;
     private JLabel jlDni;
+    private JPanel pDatos;
     private JPanel pDni;
+    private JComboBox cbEquipo;
 
     private VistaController vistaController;
 
@@ -55,6 +56,8 @@ public class JugadoresGestion extends JFrame {
         bAceptar.setEnabled(false);
         pDatos.setVisible(false);
         pDni.setVisible(false);
+
+        rellenarEquipos();
 
         setContentPane(pPrincipal);
         setSize(600, 600);
@@ -318,13 +321,10 @@ public class JugadoresGestion extends JFrame {
             JOptionPane.showMessageDialog(this,"Jugador con nif "+tfDni.getText()+" eliminado correctamente", "Jugador Eliminado", JOptionPane.INFORMATION_MESSAGE );
        }
    }
-
-
     private void onCancel() {
         // add your code here if necessary
         dispose();
     }
-
     private void validarCampos() {
         boolean todosCompletos = !tfDni.getText().trim().isEmpty() &&
                 !tfNombre.getText().trim().isEmpty() &&
@@ -346,6 +346,16 @@ public class JugadoresGestion extends JFrame {
 
         // Habilitar el botón solo si todos los campos están completos y no hay errores
         bAceptar.setEnabled(todosCompletos && !hayErrores);
+    }
+    private void rellenarEquipos() {
+        try {
+            cbEquipo.addItem("");
+            for (String equipo : vistaController.obtenerEquipos()) {
+                cbEquipo.addItem(equipo);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
 }

@@ -8,6 +8,7 @@ import View.MenuOpciones;
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.List;
 
 public class VistaController {
 
@@ -49,6 +50,10 @@ public class VistaController {
     public void eliminarJugador(String dni) {
         modeloController.eliminarJugador(dni);
     }
+    public List<String> obtenerEquipos(){
+        return modeloController.obtenerEquipos();
+    }
+
 
     // Funciones complementarias
     public Date fechaOracle(String fecha) {
