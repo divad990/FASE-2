@@ -38,8 +38,9 @@ public class JugadoresGestion extends JFrame {
     private VistaController vistaController;
 
     private JLabel[] labels = {a1, a2, a3, a4, a5, a7, a8, e1, e2, e3, e4, e5, e6, e7, e8};
+    private boolean camposCompletos = false;
 
-    //TODO Funcionalidad botones, restricción y validación de campos, validación de datos. Corregir fallos ortográficos avisos rojos
+    //TODO Funcionalidad botones, validación de datos. Corregir fallos ortográficos avisos rojos
 
     public JugadoresGestion(VistaController vistaController) {
         this.vistaController = vistaController;
@@ -47,6 +48,7 @@ public class JugadoresGestion extends JFrame {
         for (JLabel label : labels) {
             label.setVisible(false);
         }
+        bAceptar.setEnabled(false);
 
         setContentPane(pPrincipal);
         setSize(600, 600);
@@ -103,6 +105,7 @@ public class JugadoresGestion extends JFrame {
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
+                validarCampos();
             }
         });
         tfNombre.addFocusListener(new FocusAdapter() {
@@ -118,6 +121,7 @@ public class JugadoresGestion extends JFrame {
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
+                validarCampos();
             }
         });
         tfApellido.addFocusListener(new FocusAdapter() {
@@ -133,6 +137,7 @@ public class JugadoresGestion extends JFrame {
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
+                validarCampos();
             }
         });
         tfNickname.addFocusListener(new FocusAdapter() {
@@ -148,6 +153,7 @@ public class JugadoresGestion extends JFrame {
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
+                validarCampos();
             }
         });
         tfNacionalidad.addFocusListener(new FocusAdapter() {
@@ -163,6 +169,7 @@ public class JugadoresGestion extends JFrame {
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
+                validarCampos();
             }
         });
         tfFechaNacimiento.addFocusListener(new FocusAdapter() {
@@ -170,7 +177,7 @@ public class JugadoresGestion extends JFrame {
             public void focusLost(FocusEvent e) {
                 super.focusLost(e);
                 try {
-                    if (!vistaController.validarDato(tfFechaNacimiento.getText(), "^(\\\\d{4})-(0[1-9]|1[0-2])-(0[1-9]|[12]\\\\d|3[01])$")){
+                    if (!vistaController.validarDato(tfFechaNacimiento.getText(), "^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\\d{4}$")){
                         a7.setVisible(true);
                     }
                 } catch (CampoVacioException ex) {
@@ -178,6 +185,7 @@ public class JugadoresGestion extends JFrame {
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
+                validarCampos();
             }
         });
         tfSueldo.addFocusListener(new FocusAdapter() {
@@ -193,6 +201,7 @@ public class JugadoresGestion extends JFrame {
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
+                validarCampos();
             }
         });
         tfDni.addFocusListener(new FocusAdapter() {
@@ -248,16 +257,57 @@ public class JugadoresGestion extends JFrame {
                 e8.setVisible(false);
             }
         });
+        cbOpciones.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusLost(FocusEvent e) {
+                super.focusLost(e);
+                if (cbOpciones.getSelectedItem() == null) {
+                    JOptionPane.showMessageDialog(null, "Debes seleccionar una opción");
+                } else if (cbOpciones.getSelectedItem().equals("Crear Jugador")) {
+
+                } else if (cbOpciones.getSelectedItem().equals("Editar Jugador")) {
+
+                } else if (cbOpciones.getSelectedItem().equals("Eliminar Jugador")) {
+
+                }
+            }
+        });
     }
 
     private void onOK() {
-        // add your code here
+        // Validar dni en base de datos si es existente o no, validar si los datos unique cumplen.
+        if (!vistaController.validarDni(tfDni.getText())){
+            // Mostrar mensaje de error
+        }
+
         dispose();
     }
 
     private void onCancel() {
         // add your code here if necessary
         dispose();
+    }
+
+    private void validarCampos() {
+        boolean todosCompletos = !tfDni.getText().trim().isEmpty() &&
+                !tfNombre.getText().trim().isEmpty() &&
+                !tfApellido.getText().trim().isEmpty() &&
+                !tfNickname.getText().trim().isEmpty() &&
+                !tfNacionalidad.getText().trim().isEmpty() &&
+                !tfFechaNacimiento.getText().trim().isEmpty() &&
+                !tfSueldo.getText().trim().isEmpty();
+
+        // Verificar si hay algún JLabel de error visible
+        boolean hayErrores = false;
+        for (JLabel label : labels) {
+            if (label.isVisible()) {
+                hayErrores = true;
+                break;
+            }
+        }
+
+        // Habilitar el botón solo si todos los campos están completos y no hay errores
+        bAceptar.setEnabled(todosCompletos && !hayErrores);
     }
 
 }

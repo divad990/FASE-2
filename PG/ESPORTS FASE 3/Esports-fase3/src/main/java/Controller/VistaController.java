@@ -20,4 +20,7 @@ public class VistaController {
         gestionJugadores.setVisible(true); //Hace visible la ventana
         gestionJugadores.setLocationRelativeTo(null); //Centra la ventana
     }
+    public boolean validarDni(String dni) {
+        modeloController.validarDni(dni);
+    }
 }
