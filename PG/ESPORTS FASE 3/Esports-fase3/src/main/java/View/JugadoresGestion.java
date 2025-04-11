@@ -295,7 +295,7 @@ public class JugadoresGestion extends JFrame {
             }
         });
     }
-    //TODO Externalizar los JOption es labor del view o del controller??
+    //TODO Externalizar los JOption es labor del view o del controller???
     private void onOK() {
        if (cbOpciones.getSelectedItem().equals("Crear Jugador")) {
            if (vistaController.validarDni(tfDni.getText())){
