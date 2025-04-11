@@ -4,10 +4,8 @@ import Controller.VistaController;
 
 import javax.swing.*;
 
-public class MenuOpciones extends JDialog {
+public class MenuOpciones extends JFrame {
     private JPanel contentPane;
-    private JButton buttonOK;
-    private JButton buttonCancel;
     private JButton generarCalendarioDeCompeticiónButton;
     private JButton cerrarEtapaDeInscripciónButton;
     private JButton gestiónDeJugadoresButton;
@@ -21,12 +19,10 @@ public class MenuOpciones extends JDialog {
         this.vistaController = vistaController;
 
         setContentPane(contentPane);
-        setModal(true);
         setTitle("Menú de Opciones");
         setSize(500, 400);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        getRootPane().setDefaultButton(buttonOK);
 
         // ActionListeners para cada botón (excepto OK y Cancel)
         generarCalendarioDeCompeticiónButton.addActionListener(e -> {
@@ -38,6 +34,7 @@ public class MenuOpciones extends JDialog {
         });
 
         gestiónDeJugadoresButton.addActionListener(e -> {
+            dispose();
             vistaController.iniciarGestionJugadores();
         });
 
@@ -51,17 +48,6 @@ public class MenuOpciones extends JDialog {
 
         verInformesButton.addActionListener(e -> {
 
-        });
-
-        // Botones OK y Cancel solo cierran la ventana
-        buttonOK.addActionListener(e -> dispose());
-        buttonCancel.addActionListener(e -> dispose());
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            MenuOpciones dialog = new MenuOpciones();
-            dialog.setVisible(true);
         });
     }
 }

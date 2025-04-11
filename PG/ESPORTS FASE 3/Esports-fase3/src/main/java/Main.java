@@ -10,7 +10,8 @@ public class Main {
     public static void main(String[] args) {
         crearObjetos();
         // Vista
-        vistaController.iniciarGestionJugadores();
+        vistaController.iniciarMenuOpciones();
+        //vistaController.iniciarGestionJugadores();
     }
 
     public static void crearObjetos()

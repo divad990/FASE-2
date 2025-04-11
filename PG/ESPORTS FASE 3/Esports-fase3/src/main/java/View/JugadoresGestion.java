@@ -58,7 +58,7 @@ public class JugadoresGestion extends JFrame {
 
         setContentPane(pPrincipal);
         setSize(600, 600);
-        // call onCancel() when cross is clicked
+        setTitle("Gestión de Jugadores");
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {

@@ -3,6 +3,7 @@ package Controller;
 import Exceptions.CampoVacioException;
 import Utils.*;
 import View.JugadoresGestion;
+import View.MenuOpciones;
 
 import java.math.BigDecimal;
 import java.sql.Date;
@@ -23,6 +24,11 @@ public class VistaController {
         JugadoresGestion gestionJugadores = new JugadoresGestion(this);
         gestionJugadores.setVisible(true); //Hace visible la ventana
         gestionJugadores.setLocationRelativeTo(null); //Centra la ventana
+    }
+    public void iniciarMenuOpciones() {
+        MenuOpciones menuOpciones = new MenuOpciones(this);
+        menuOpciones.setVisible(true); //Hace visible la ventana
+        menuOpciones.setLocationRelativeTo(null); //Centra la ventana
     }
     public boolean validarDni(String dni) {
         return modeloController.validarDni(dni);
