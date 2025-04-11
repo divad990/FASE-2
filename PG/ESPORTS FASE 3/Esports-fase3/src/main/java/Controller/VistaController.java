@@ -16,7 +16,12 @@ public class VistaController {
         vInicio = new VentanaInicio(this);
         vInicio.setVisible(true);
     }
-
+    public boolean buscarUsuario(String username) throws Exception {
+        return modeloController.buscarUsuario(username);
+    }
+    public boolean buscarUsuarioContrasenia(String password) throws Exception {
+        return modeloController.buscarUsuarioContrasenia(password);
+    }
     public void mostrarAccesoLogIn()
     {
         vLogin = new VentanaLogIn(this);
