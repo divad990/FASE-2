@@ -10,11 +10,7 @@ public class VistaController {
     private VentanaLogIn vLogin;
 
     public VistaController(ModeloController modeloController) {
-
         this.modeloController = modeloController;
-
-        vInicio = new VentanaInicio(this);
-        vInicio.setVisible(true);
     }
     public boolean buscarUsuario(String username) throws Exception {
         return modeloController.buscarUsuario(username);
@@ -27,6 +23,10 @@ public class VistaController {
         vLogin = new VentanaLogIn(this);
         vLogin.setVisible(true);
         vInicio.dispose();
+    }
+    public void iniciarPrincipal() {
+        vInicio = new VentanaInicio(this);
+        vInicio.setVisible(true);
     }
 
 }

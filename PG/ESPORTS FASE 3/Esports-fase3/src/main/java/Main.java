@@ -7,6 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
         crearObjetos();
+        vistaController.iniciarPrincipal();
     }
 
     public static void crearObjetos()
