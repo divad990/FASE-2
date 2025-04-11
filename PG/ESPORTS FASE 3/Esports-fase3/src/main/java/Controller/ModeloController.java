@@ -1,11 +1,20 @@
 package Controller;
 
+import Model.Usuario;
+import Model.UsuarioDAO;
+import Utils.BaseDatos;
+
+import javax.swing.*;
 import java.math.BigDecimal;
 import java.util.List;
 
 public class ModeloController {
 
     private VistaController vistaController;
+
+    private Usuario usuario;
+    private UsuarioController usuarioController;
+    private UsuarioDAO usuarioDAO;
     private final JugadorController jugadorController;
     private final EquipoController equipoController;
 
@@ -18,6 +27,19 @@ public class ModeloController {
         return vistaController;
     }
 
+    public boolean buscarUsuario(String username) throws Exception {
+        boolean encontrado = false;
+        usuario = usuarioController.buscarUsuario(username);
+        if (usuario == null) {
+            JOptionPane.showMessageDialog(null, "Usuario no encontrado");
+        }else{
+            encontrado = true;
+        }
+        return encontrado;
+    }
+    public boolean buscarUsuarioContrasenia(String password) throws Exception {
+        return password.equals(usuario.getPasswd());
+    }
     public void setVistaController(VistaController vistaController) {
         this.vistaController = vistaController;
     }

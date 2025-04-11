@@ -1,10 +1,11 @@
 package Controller;
 
+import View.VentanaInicio;
+import View.VentanaLogIn;
 import Exceptions.CampoVacioException;
 import Utils.*;
 import View.JugadoresGestion;
 import View.MenuOpciones;
-
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.time.LocalDate;
@@ -13,6 +14,8 @@ import java.util.List;
 public class VistaController {
 
     private ModeloController modeloController;
+    private VentanaInicio vInicio;
+    private VentanaLogIn vLogin;
 
     public VistaController() {
         this.modeloController = new ModeloController();
@@ -65,4 +68,21 @@ public class VistaController {
         LocalDate fechaLocalDate = LocalDate.of(anio, mes, dia);
         return Date.valueOf(fechaLocalDate);
     }
+    public boolean buscarUsuario(String username) throws Exception {
+        return modeloController.buscarUsuario(username);
+    }
+    public boolean buscarUsuarioContrasenia(String password) throws Exception {
+        return modeloController.buscarUsuarioContrasenia(password);
+    }
+    public void mostrarAccesoLogIn()
+    {
+        vLogin = new VentanaLogIn(this);
+        vLogin.setVisible(true);
+        vInicio.dispose();
+    }
+    public void iniciarPrincipal() {
+        vInicio = new VentanaInicio(this);
+        vInicio.setVisible(true);
+    }
+
 }

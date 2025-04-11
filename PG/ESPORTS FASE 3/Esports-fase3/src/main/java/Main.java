@@ -9,9 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
         crearObjetos();
-        // Vista
-        vistaController.iniciarMenuOpciones();
-        //vistaController.iniciarGestionJugadores();
+        vistaController.iniciarPrincipal();
     }
 
     public static void crearObjetos()
