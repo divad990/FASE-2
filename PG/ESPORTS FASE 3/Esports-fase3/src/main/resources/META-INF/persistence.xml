@@ -7,12 +7,12 @@
         <properties>
             <!-- Configuración de conexión a la base de datos -->
             <property name="jakarta.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/equipodavid"/>
-            <property name="jakarta.persistence.jdbc.user" value="root"/>
-            <property name="jakarta.persistence.jdbc.password" value="usbw"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:oracle:thin:@//ccsatserv.dnsdojo.com:1521/xepdb1"/>
+            <property name="jakarta.persistence.jdbc.user" value="equipoDavid"/>
+            <property name="jakarta.persistence.jdbc.password" value="Jm12345"/>
 
             <!-- Dialecto de Hibernate -->
-            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.OracleDialect"/>
 
             <!-- Opcional: Mostrar consultas SQL en la consola -->
             <property name="hibernate.show_sql" value="true"/>
