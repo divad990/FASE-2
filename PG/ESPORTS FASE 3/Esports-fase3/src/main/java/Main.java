@@ -1,3 +1,5 @@
+import Controller.VistaController;
+
 import javax.naming.ldap.Control;
 
 public class Main {
@@ -14,7 +16,7 @@ public class Main {
     {
         // Modelo
         modeloController = new Controller.ModeloController();
-        vistaController = new Controller.VistaController(modeloController);
+        vistaController = new Controller.VistaController();
         modeloController.setVistaController(vistaController);
 
     }
