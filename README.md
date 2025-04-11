@@ -14,7 +14,7 @@
 ### 🔹 PG (Programación)
 #### **Fase 1: Inscripción**
 - 🔄 Login básico (Admins podrán hacer CRUD general, cerrar etapa inscripción, generar calendario, introducir resultados de enfrentamientos, ver todos los informes) (Usuarios podrán visualizar informe de relación de equipos que conforman la competición, visualizar informe correspondiente a resultados de la última jornada)
-- ✅ CRUD Jugadores (Incluye en menú admin mostrar???)
+- ✅ CRUD Jugadores (Falta incluir mostrar Jugadores)
 - 🔄 CRUD Equipos
 - 🔄 Gestionar restricciones. (BD)
 - 🔄 Generar jornadas y enfrentamientos, almacenarlos.
