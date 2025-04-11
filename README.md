@@ -59,6 +59,7 @@ procedimiento que está probando y dónde se utiliza en la aplicación Java.
 
 ## 📌 Entregables
 - 📜 **Diagrama de Clases**
+- 🔶 **Diagrama casos de uso**
 - 💻 **Código del Proyecto**
 - 📊 **MER (Modelo Entidad-Relación)**
 - 🔗 **MR (Modelo Relacional)**
