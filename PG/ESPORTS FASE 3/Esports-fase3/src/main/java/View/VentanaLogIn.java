@@ -48,6 +48,7 @@ public class VentanaLogIn extends JDialog {
             if(!encontradoContrasenia){
                 throw new Exception("Contraseña no encontradada,");
             }
+            dispose();
             vistaController.iniciarMenuOpciones();
         }catch(Exception e){
 

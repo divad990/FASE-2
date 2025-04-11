@@ -10,15 +10,17 @@ import java.util.List;
 
 public class ModeloController {
 
-    private VistaController vistaController;
+
+
 
     private Usuario usuario;
-    private UsuarioController usuarioController;
-    private UsuarioDAO usuarioDAO;
+    private final UsuarioController usuarioController;
+    private VistaController vistaController;
     private final JugadorController jugadorController;
     private final EquipoController equipoController;
 
     public ModeloController() {
+        this.usuarioController = new UsuarioController();
         this.equipoController = new EquipoController();
         this.jugadorController = new JugadorController();
     }
