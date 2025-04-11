@@ -1,5 +1,7 @@
 package View;
 
+import Controller.VistaController;
+
 import javax.swing.*;
 
 public class MenuOpciones extends JDialog {
@@ -13,7 +15,11 @@ public class MenuOpciones extends JDialog {
     private JButton introducirResultadosButton;
     private JButton verInformesButton;
 
-    public MenuOpciones() {
+    private VistaController vistaController;
+
+    public MenuOpciones(VistaController vistaController) {
+        this.vistaController = vistaController;
+
         setContentPane(contentPane);
         setModal(true);
         setTitle("Menú de Opciones");
@@ -32,7 +38,7 @@ public class MenuOpciones extends JDialog {
         });
 
         gestiónDeJugadoresButton.addActionListener(e -> {
-
+            vistaController.iniciarGestionJugadores();
         });
 
         gestiónDeEquiposButton.addActionListener(e -> {
