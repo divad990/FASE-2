@@ -34,6 +34,8 @@ public class JugadoresGestion extends JFrame {
     private JLabel e6;
     private JLabel e7;
     private JLabel e8;
+    private JPanel pDatos;
+    private JLabel jlDni;
 
     private VistaController vistaController;
 
@@ -49,6 +51,7 @@ public class JugadoresGestion extends JFrame {
             label.setVisible(false);
         }
         bAceptar.setEnabled(false);
+        pDatos.setVisible(false);
 
         setContentPane(pPrincipal);
         setSize(600, 600);
@@ -257,32 +260,35 @@ public class JugadoresGestion extends JFrame {
                 e8.setVisible(false);
             }
         });
-        cbOpciones.addFocusListener(new FocusAdapter() {
+
+        cbOpciones.addActionListener(new ActionListener() {
             @Override
-            public void focusLost(FocusEvent e) {
-                super.focusLost(e);
+            public void actionPerformed(ActionEvent e) {
                 if (cbOpciones.getSelectedItem() == null) {
                     JOptionPane.showMessageDialog(null, "Debes seleccionar una opción");
                 } else if (cbOpciones.getSelectedItem().equals("Crear Jugador")) {
-
-                } else if (cbOpciones.getSelectedItem().equals("Editar Jugador")) {
-
+                    pDatos.setVisible(true);
+                } else if (cbOpciones.getSelectedItem().equals("Modificar Jugador")) {
+                    pDatos.setVisible(true);
                 } else if (cbOpciones.getSelectedItem().equals("Eliminar Jugador")) {
-
+                    pDatos.setVisible(false);
+                    jlDni.setVisible(true);
+                    tfDni.setVisible(true);
                 }
             }
         });
     }
-
+    //TODO Externalizar los JOption es labor del view o del controller??
     private void onOK() {
         // Validar dni en base de datos si es existente o no, validar si los datos unique cumplen.
         if (vistaController.validarDni(tfDni.getText())){
             JOptionPane.showMessageDialog(this, "Ya existe un Jugador con ese DNI", "Error", JOptionPane.ERROR_MESSAGE);
         } else if(vistaController.validarNickname(tfNickname.getText())){
             JOptionPane.showMessageDialog(this, "El nickname introducido ya está en uso", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            vistaController.crearJugador(tfDni.getText(), tfNombre.getText(), tfApellido.getText(), tfNickname.getText(), tfNacionalidad.getText(), cmRol.getSelectedItem().toString(), tfFechaNacimiento.getText(), tfSueldo.getText());
+            JOptionPane.showMessageDialog(this, "Jugador con nif "+tfNombre.getText()+" creado correctamente", "Jugador Creado", JOptionPane.INFORMATION_MESSAGE );
         }
-
-        dispose();
     }
 
     private void onCancel() {
@@ -297,7 +303,8 @@ public class JugadoresGestion extends JFrame {
                 !tfNickname.getText().trim().isEmpty() &&
                 !tfNacionalidad.getText().trim().isEmpty() &&
                 !tfFechaNacimiento.getText().trim().isEmpty() &&
-                !tfSueldo.getText().trim().isEmpty();
+                !tfSueldo.getText().trim().isEmpty() &&
+                !cmRol.getSelectedItem().toString().isEmpty();
 
         // Verificar si hay algún JLabel de error visible
         boolean hayErrores = false;

@@ -4,6 +4,8 @@ import Model.Jugador;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 
+import java.math.BigDecimal;
+
 public class JugadorDAO {
 
     EntityManager em;
@@ -35,6 +37,20 @@ public class JugadorDAO {
             t.rollback();
             return false;
         }
+    }
+    public void crearJugador(String dni, String nombre, String apellido, String nickname, String nacionalidad, String rol, java.sql.Date fechaNacimiento, BigDecimal sueldo) {
+        t.begin();
+        Jugador j = new Jugador();
+        j.setDni(dni);
+        j.setNombre(nombre);
+        j.setRol(rol);
+        j.setNickname(nickname);
+        j.setApellido(apellido);
+        j.setNacionalidad(nacionalidad);
+        j.setFechaNacimiento(fechaNacimiento.toLocalDate());
+        j.setSueldo(sueldo);
+        em.persist(j);
+        t.commit();
     }
 
 }

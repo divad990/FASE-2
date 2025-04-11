@@ -3,6 +3,7 @@ package Controller;
 import Model.DAO.JugadorDAO;
 import Utils.BaseDatos;
 
+import java.math.BigDecimal;
 
 
 public class JugadorController {
@@ -18,5 +19,8 @@ public class JugadorController {
     }
     public boolean validarNickname(String nombre) {
         return jugadorDAO.validarNickname(nombre);
+    }
+    public void crearJugador(String dni, String nombre, String apellido, String nickname, String nacionalidad, String rol, java.sql.Date fechaNacimiento, BigDecimal sueldo) {
+        jugadorDAO.crearJugador(dni, nombre, apellido, nickname, nacionalidad, rol, fechaNacimiento, sueldo);
     }
 }

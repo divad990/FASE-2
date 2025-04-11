@@ -4,6 +4,10 @@ import Exceptions.CampoVacioException;
 import Utils.*;
 import View.JugadoresGestion;
 
+import java.math.BigDecimal;
+import java.sql.Date;
+import java.time.LocalDate;
+
 public class VistaController {
 
     private ModeloController modeloController;
@@ -25,5 +29,19 @@ public class VistaController {
     }
     public boolean validarNickname(String nickname) {
         return modeloController.validarNickname(nickname);
+    }
+    public void crearJugador(String dni, String nombre, String apellido, String nickname, String nacionalidad, String rol, String nacimiento, String sueldo) {
+        BigDecimal sueldoInt = BigDecimal.valueOf(Integer.parseInt(sueldo));
+        Date fechaNacimiento = fechaOracle(nacimiento);
+        modeloController.crearJugador(dni,nombre,apellido,nickname,nacionalidad,rol,fechaNacimiento,sueldoInt);
+    }
+    public Date fechaOracle(String fecha) {
+        String[] fechaSplit = fecha.split("/");
+        int dia = Integer.parseInt(fechaSplit[0]);
+        int mes = Integer.parseInt(fechaSplit[1]);
+        int anio = Integer.parseInt(fechaSplit[2]);
+
+        LocalDate fechaLocalDate = LocalDate.of(anio, mes, dia);
+        return Date.valueOf(fechaLocalDate);
     }
 }
